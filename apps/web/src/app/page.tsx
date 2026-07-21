@@ -1,7 +1,9 @@
 export default function HomePage() {
   return (
-    <main>
-      <h1>DestinySphere</h1>
+    <main className="min-h-screen">
+      <h1 className="p-20 text-5xl font-bold">
+        DestinySphere
+      </h1>
     </main>
   );
 }
