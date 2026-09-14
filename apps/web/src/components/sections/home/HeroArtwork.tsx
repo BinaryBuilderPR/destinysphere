@@ -5,12 +5,12 @@ import Image from "next/image";
 export default function HeroArtwork() {
   return (
     <div className="relative mx-auto flex w-full max-w-[340px] sm:max-w-[460px] lg:max-w-[530px] items-center justify-center select-none">
-      {/* Ambient Soft Gold Halo */}
-      <div className="absolute inset-4 rounded-full blur-3xl pointer-events-none bg-[#C59758]/20 dark:bg-[#D5AE63]/20 animate-pulse-glow transition-colors duration-500" />
+      {/* Ambient Celestial Glow - Dark mode only so light mode remains clean & crisp */}
+      <div className="hidden dark:block absolute inset-2 rounded-full blur-3xl pointer-events-none bg-[#D5AE63]/15 animate-pulse-glow transition-colors duration-500" />
 
       {/* Generated Artwork Container with organic floating motion */}
       <div className="relative w-full transition-all duration-300 animate-float-slow">
-        {/* Light Mode Hero Illustration - Crystal Clear Transparent PNG */}
+        {/* Light Mode Hero Illustration - 100% Crisp & Clean */}
         <div className="block dark:hidden">
           <Image
             src="/hero-generated-light.png"
@@ -20,11 +20,11 @@ export default function HeroArtwork() {
             priority
             sizes="(max-width: 640px) 340px, (max-width: 1024px) 460px, 530px"
             style={{ width: "100%", height: "auto" }}
-            className="object-contain pointer-events-none drop-shadow-[0_12px_30px_rgba(197,151,88,0.2)]"
+            className="object-contain pointer-events-none"
           />
         </div>
 
-        {/* Dark Mode Hero Illustration - Crystal Clear Transparent PNG */}
+        {/* Dark Mode Hero Illustration */}
         <div className="hidden dark:block">
           <Image
             src="/hero-generated-dark.png"
@@ -34,7 +34,7 @@ export default function HeroArtwork() {
             priority
             sizes="(max-width: 640px) 340px, (max-width: 1024px) 460px, 530px"
             style={{ width: "100%", height: "auto" }}
-            className="object-contain pointer-events-none drop-shadow-[0_15px_40px_rgba(213,174,99,0.25)]"
+            className="object-contain pointer-events-none"
           />
         </div>
       </div>
