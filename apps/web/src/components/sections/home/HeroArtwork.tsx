@@ -13,31 +13,31 @@ export default function HeroArtwork() {
 
       {/* Generated Artwork Container with organic floating motion */}
       <div className="relative w-full transition-all duration-300 animate-float-slow">
-        {/* Light Mode Hero Illustration - Perfectly Blended */}
+        {/* Light Mode Hero Illustration - Crystal Clear Transparent PNG */}
         <div className="block dark:hidden">
           <Image
-            src="/hero-generated-light.jpg"
+            src="/hero-generated-light.png"
             alt="DestinySphere Celestial Tarot Guidance"
             width={530}
             height={530}
             priority
             sizes="(max-width: 640px) 340px, (max-width: 1024px) 460px, 530px"
-            style={{ width: "100%", height: "auto", filter: "contrast(1.06) brightness(1.02)" }}
-            className="object-contain mix-blend-multiply pointer-events-none"
+            style={{ width: "100%", height: "auto" }}
+            className="object-contain pointer-events-none drop-shadow-[0_12px_30px_rgba(197,151,88,0.2)]"
           />
         </div>
 
-        {/* Dark Mode Hero Illustration */}
+        {/* Dark Mode Hero Illustration - Crystal Clear Transparent PNG */}
         <div className="hidden dark:block">
           <Image
-            src="/hero-generated-dark.jpg"
+            src="/hero-generated-dark.png"
             alt="DestinySphere Celestial Midnight Tarot Guidance"
             width={530}
             height={530}
             priority
             sizes="(max-width: 640px) 340px, (max-width: 1024px) 460px, 530px"
             style={{ width: "100%", height: "auto" }}
-            className="object-contain pointer-events-none"
+            className="object-contain pointer-events-none drop-shadow-[0_15px_40px_rgba(213,174,99,0.25)]"
           />
         </div>
       </div>
