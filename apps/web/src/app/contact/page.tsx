@@ -132,7 +132,7 @@ export default function ContactPage() {
                       placeholder="e.g. Evelyn Vance"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full px-4 py-3 rounded-2xl bg-[#FAF7EE] dark:bg-[#121B26] border border-[#C59758]/40 text-[#221A14] dark:text-[#F5F3EF] text-sm focus:outline-none focus:border-[#C59758] transition-all"
+                      className="w-full px-4 py-3 rounded-2xl bg-[#FAF7EE] dark:bg-[#121B26] border-2 border-[#C59758]/30 dark:border-[#D5AE63]/30 text-[#221A14] dark:text-[#F5F3EF] text-sm focus:outline-none focus:border-[#C59758] dark:focus:border-[#D5AE63] focus:ring-2 focus:ring-[#C59758]/20 transition-all"
                     />
                   </div>
 
@@ -146,7 +146,7 @@ export default function ContactPage() {
                       placeholder="you@example.com"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full px-4 py-3 rounded-2xl bg-[#FAF7EE] dark:bg-[#121B26] border border-[#C59758]/40 text-[#221A14] dark:text-[#F5F3EF] text-sm focus:outline-none focus:border-[#C59758] transition-all"
+                      className="w-full px-4 py-3 rounded-2xl bg-[#FAF7EE] dark:bg-[#121B26] border-2 border-[#C59758]/30 dark:border-[#D5AE63]/30 text-[#221A14] dark:text-[#F5F3EF] text-sm focus:outline-none focus:border-[#C59758] dark:focus:border-[#D5AE63] focus:ring-2 focus:ring-[#C59758]/20 transition-all"
                     />
                   </div>
 
@@ -157,13 +157,13 @@ export default function ContactPage() {
                     <select
                       value={formData.category}
                       onChange={(e) => setFormData({ ...formData, category: e.target.value })}
-                      className="w-full px-4 py-3 rounded-2xl bg-[#FAF7EE] dark:bg-[#121B26] border border-[#C59758]/40 text-[#221A14] dark:text-[#F5F3EF] text-sm font-medium focus:outline-none focus:border-[#C59758] transition-all cursor-pointer"
+                      className="sacred-select w-full px-4 py-3 rounded-2xl bg-[#FAF7EE] dark:bg-[#121B26] border-2 border-[#C59758]/30 dark:border-[#D5AE63]/30 text-[#221A14] dark:text-[#F5F3EF] text-sm font-medium focus:outline-none focus:border-[#C59758] dark:focus:border-[#D5AE63] focus:ring-2 focus:ring-[#C59758]/20 transition-all cursor-pointer"
                     >
-                      <option value="General Inquiry">General Platform Inquiry</option>
-                      <option value="Tarot Oracle Support">Tarot Oracle & Game Support</option>
-                      <option value="Zodiac Calculation">Zodiac & Birth Chart Calculation</option>
-                      <option value="Privacy & Data Request">Privacy & Data Deletion Request</option>
-                      <option value="Astrologer Verification">Astrologer Lineage & Partnerships</option>
+                      <option value="Consultation Inquiry">Consultation / Reading Inquiry</option>
+                      <option value="Order Status & Delivery">Order Status & Delivery</option>
+                      <option value="Billing & Refund">Billing & Sacred Token Questions</option>
+                      <option value="Astrologer Partnership">Join Astrologer Council</option>
+                      <option value="General Feedback">General Feedback & Blessings</option>
                     </select>
                   </div>
 
@@ -174,10 +174,10 @@ export default function ContactPage() {
                     <textarea
                       rows={4}
                       required
-                      placeholder="Share your inquiry or feedback..."
+                      placeholder="Share your question or context..."
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      className="w-full px-4 py-3 rounded-2xl bg-[#FAF7EE] dark:bg-[#121B26] border border-[#C59758]/40 text-[#221A14] dark:text-[#F5F3EF] text-sm focus:outline-none focus:border-[#C59758] transition-all resize-none"
+                      className="w-full px-4 py-3 rounded-2xl bg-[#FAF7EE] dark:bg-[#121B26] border-2 border-[#C59758]/30 dark:border-[#D5AE63]/30 text-[#221A14] dark:text-[#F5F3EF] text-sm focus:outline-none focus:border-[#C59758] dark:focus:border-[#D5AE63] focus:ring-2 focus:ring-[#C59758]/20 transition-all resize-none"
                     />
                   </div>
 

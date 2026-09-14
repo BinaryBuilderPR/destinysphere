@@ -372,7 +372,7 @@ export function ReadingBookingFlow() {
                 <select
                   value={formData.gender}
                   onChange={(e) => setFormData({ ...formData, gender: e.target.value })}
-                  className="w-full px-4 py-3 rounded-2xl bg-[#FAF7EE] dark:bg-[#121B26] border border-[#C59758]/40 text-[#221A14] dark:text-[#F5F3EF] text-sm focus:outline-none focus:border-[#C59758] cursor-pointer"
+                  className="sacred-select w-full px-4 py-3 rounded-2xl bg-[#FAF7EE] dark:bg-[#121B26] border-2 border-[#C59758]/30 dark:border-[#D5AE63]/30 text-[#221A14] dark:text-[#F5F3EF] text-sm focus:outline-none focus:border-[#C59758] dark:focus:border-[#D5AE63] focus:ring-2 focus:ring-[#C59758]/20 cursor-pointer"
                 >
                   <option value="Female">Female (Yin / Receptive)</option>
                   <option value="Male">Male (Yang / Active)</option>
@@ -391,7 +391,7 @@ export function ReadingBookingFlow() {
                 <select
                   value={formData.birthMonth}
                   onChange={(e) => setFormData({ ...formData, birthMonth: Number(e.target.value) })}
-                  className="w-full px-3 py-3 rounded-2xl bg-[#FAF7EE] dark:bg-[#121B26] border border-[#C59758]/40 text-xs sm:text-sm font-semibold text-[#221A14] dark:text-[#F5F3EF] cursor-pointer"
+                  className="sacred-select w-full px-3 py-3 rounded-2xl bg-[#FAF7EE] dark:bg-[#121B26] border-2 border-[#C59758]/30 dark:border-[#D5AE63]/30 text-xs sm:text-sm font-semibold text-[#221A14] dark:text-[#F5F3EF] focus:outline-none focus:border-[#C59758] dark:focus:border-[#D5AE63] focus:ring-2 focus:ring-[#C59758]/20 cursor-pointer"
                 >
                   {[
                     "Jan", "Feb", "Mar", "Apr", "May", "Jun",
@@ -406,7 +406,7 @@ export function ReadingBookingFlow() {
                 <select
                   value={formData.birthDay}
                   onChange={(e) => setFormData({ ...formData, birthDay: Number(e.target.value) })}
-                  className="w-full px-3 py-3 rounded-2xl bg-[#FAF7EE] dark:bg-[#121B26] border border-[#C59758]/40 text-xs sm:text-sm font-semibold text-[#221A14] dark:text-[#F5F3EF] cursor-pointer"
+                  className="sacred-select w-full px-3 py-3 rounded-2xl bg-[#FAF7EE] dark:bg-[#121B26] border-2 border-[#C59758]/30 dark:border-[#D5AE63]/30 text-xs sm:text-sm font-semibold text-[#221A14] dark:text-[#F5F3EF] focus:outline-none focus:border-[#C59758] dark:focus:border-[#D5AE63] focus:ring-2 focus:ring-[#C59758]/20 cursor-pointer"
                 >
                   {Array.from({ length: 31 }, (_, i) => i + 1).map((d) => (
                     <option key={d} value={d}>
@@ -418,7 +418,7 @@ export function ReadingBookingFlow() {
                 <select
                   value={formData.birthYear}
                   onChange={(e) => setFormData({ ...formData, birthYear: Number(e.target.value) })}
-                  className="w-full px-3 py-3 rounded-2xl bg-[#FAF7EE] dark:bg-[#121B26] border border-[#C59758]/40 text-xs sm:text-sm font-semibold text-[#221A14] dark:text-[#F5F3EF] cursor-pointer"
+                  className="sacred-select w-full px-3 py-3 rounded-2xl bg-[#FAF7EE] dark:bg-[#121B26] border-2 border-[#C59758]/30 dark:border-[#D5AE63]/30 text-xs sm:text-sm font-semibold text-[#221A14] dark:text-[#F5F3EF] focus:outline-none focus:border-[#C59758] dark:focus:border-[#D5AE63] focus:ring-2 focus:ring-[#C59758]/20 cursor-pointer"
                 >
                   {Array.from({ length: 90 }, (_, i) => 2026 - i).map((y) => (
                     <option key={y} value={y}>
@@ -452,7 +452,7 @@ export function ReadingBookingFlow() {
                     <select
                       value={formData.birthHour}
                       onChange={(e) => setFormData({ ...formData, birthHour: Number(e.target.value) })}
-                      className="px-2 py-3 rounded-2xl bg-[#FAF7EE] dark:bg-[#121B26] border border-[#C59758]/40 text-xs sm:text-sm text-[#221A14] dark:text-[#F5F3EF]"
+                      className="sacred-select px-2 py-3 rounded-2xl bg-[#FAF7EE] dark:bg-[#121B26] border-2 border-[#C59758]/30 dark:border-[#D5AE63]/30 text-xs sm:text-sm text-[#221A14] dark:text-[#F5F3EF] focus:outline-none focus:border-[#C59758] dark:focus:border-[#D5AE63]"
                     >
                       {Array.from({ length: 12 }, (_, i) => i + 1).map((h) => (
                         <option key={h} value={h}>
@@ -464,7 +464,7 @@ export function ReadingBookingFlow() {
                     <select
                       value={formData.birthMinute}
                       onChange={(e) => setFormData({ ...formData, birthMinute: Number(e.target.value) })}
-                      className="px-2 py-3 rounded-2xl bg-[#FAF7EE] dark:bg-[#121B26] border border-[#C59758]/40 text-xs sm:text-sm text-[#221A14] dark:text-[#F5F3EF]"
+                      className="sacred-select px-2 py-3 rounded-2xl bg-[#FAF7EE] dark:bg-[#121B26] border-2 border-[#C59758]/30 dark:border-[#D5AE63]/30 text-xs sm:text-sm text-[#221A14] dark:text-[#F5F3EF] focus:outline-none focus:border-[#C59758] dark:focus:border-[#D5AE63]"
                     >
                       {Array.from({ length: 60 }, (_, i) => i).map((m) => (
                         <option key={m} value={m}>
@@ -476,7 +476,7 @@ export function ReadingBookingFlow() {
                     <select
                       value={formData.birthPeriod}
                       onChange={(e) => setFormData({ ...formData, birthPeriod: e.target.value })}
-                      className="px-2 py-3 rounded-2xl bg-[#FAF7EE] dark:bg-[#121B26] border border-[#C59758]/40 text-xs sm:text-sm font-bold text-[#221A14] dark:text-[#F5F3EF]"
+                      className="sacred-select px-2 py-3 rounded-2xl bg-[#FAF7EE] dark:bg-[#121B26] border-2 border-[#C59758]/30 dark:border-[#D5AE63]/30 text-xs sm:text-sm font-bold text-[#221A14] dark:text-[#F5F3EF] focus:outline-none focus:border-[#C59758] dark:focus:border-[#D5AE63]"
                     >
                       <option value="AM">AM</option>
                       <option value="PM">PM</option>
@@ -501,7 +501,7 @@ export function ReadingBookingFlow() {
                     placeholder="e.g. New York, USA or Mumbai, India"
                     value={formData.birthCity}
                     onChange={(e) => setFormData({ ...formData, birthCity: e.target.value })}
-                    className="w-full pl-11 pr-4 py-3 rounded-2xl bg-[#FAF7EE] dark:bg-[#121B26] border border-[#C59758]/40 text-[#221A14] dark:text-[#F5F3EF] text-sm focus:outline-none focus:border-[#C59758]"
+                    className="w-full pl-11 pr-4 py-3 rounded-2xl bg-[#FAF7EE] dark:bg-[#121B26] border-2 border-[#C59758]/30 dark:border-[#D5AE63]/30 text-[#221A14] dark:text-[#F5F3EF] text-sm focus:outline-none focus:border-[#C59758] dark:focus:border-[#D5AE63] focus:ring-2 focus:ring-[#C59758]/20"
                   />
                 </div>
               </div>
@@ -518,7 +518,7 @@ export function ReadingBookingFlow() {
                   <select
                     value={formData.maritalStatus}
                     onChange={(e) => setFormData({ ...formData, maritalStatus: e.target.value })}
-                    className="w-full pl-11 pr-4 py-3 rounded-2xl bg-[#FAF7EE] dark:bg-[#121B26] border border-[#C59758]/40 text-[#221A14] dark:text-[#F5F3EF] text-sm focus:outline-none focus:border-[#C59758] cursor-pointer"
+                    className="sacred-select w-full pl-11 pr-4 py-3 rounded-2xl bg-[#FAF7EE] dark:bg-[#121B26] border-2 border-[#C59758]/30 dark:border-[#D5AE63]/30 text-[#221A14] dark:text-[#F5F3EF] text-sm focus:outline-none focus:border-[#C59758] dark:focus:border-[#D5AE63] focus:ring-2 focus:ring-[#C59758]/20 cursor-pointer"
                   >
                     <option value="Single">Single (Seeking Alignment)</option>
                     <option value="In Relationship">In a Relationship / Dating</option>
@@ -538,7 +538,7 @@ export function ReadingBookingFlow() {
                   <select
                     value={formData.financialStatus}
                     onChange={(e) => setFormData({ ...formData, financialStatus: e.target.value })}
-                    className="w-full pl-11 pr-4 py-3 rounded-2xl bg-[#FAF7EE] dark:bg-[#121B26] border border-[#C59758]/40 text-[#221A14] dark:text-[#F5F3EF] text-sm focus:outline-none focus:border-[#C59758] cursor-pointer"
+                    className="sacred-select w-full pl-11 pr-4 py-3 rounded-2xl bg-[#FAF7EE] dark:bg-[#121B26] border-2 border-[#C59758]/30 dark:border-[#D5AE63]/30 text-[#221A14] dark:text-[#F5F3EF] text-sm focus:outline-none focus:border-[#C59758] dark:focus:border-[#D5AE63] focus:ring-2 focus:ring-[#C59758]/20 cursor-pointer"
                   >
                     <option value="Employed / Career Growth">Employed (Career Growth Focus)</option>
                     <option value="Entrepreneur / Business">Business Owner / Venture Expansion</option>
@@ -561,7 +561,7 @@ export function ReadingBookingFlow() {
                   placeholder="you@example.com"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full px-4 py-3 rounded-2xl bg-[#FAF7EE] dark:bg-[#121B26] border border-[#C59758]/40 text-[#221A14] dark:text-[#F5F3EF] text-sm focus:outline-none focus:border-[#C59758]"
+                  className="w-full px-4 py-3 rounded-2xl bg-[#FAF7EE] dark:bg-[#121B26] border-2 border-[#C59758]/30 dark:border-[#D5AE63]/30 text-[#221A14] dark:text-[#F5F3EF] text-sm focus:outline-none focus:border-[#C59758] dark:focus:border-[#D5AE63] focus:ring-2 focus:ring-[#C59758]/20"
                 />
               </div>
 
@@ -575,7 +575,7 @@ export function ReadingBookingFlow() {
                   placeholder="+1 (555) 000-0000"
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                  className="w-full px-4 py-3 rounded-2xl bg-[#FAF7EE] dark:bg-[#121B26] border border-[#C59758]/40 text-[#221A14] dark:text-[#F5F3EF] text-sm focus:outline-none focus:border-[#C59758]"
+                  className="w-full px-4 py-3 rounded-2xl bg-[#FAF7EE] dark:bg-[#121B26] border-2 border-[#C59758]/30 dark:border-[#D5AE63]/30 text-[#221A14] dark:text-[#F5F3EF] text-sm focus:outline-none focus:border-[#C59758] dark:focus:border-[#D5AE63] focus:ring-2 focus:ring-[#C59758]/20"
                 />
               </div>
             </div>
@@ -591,7 +591,7 @@ export function ReadingBookingFlow() {
                 placeholder="e.g. When will I transition into my soul-aligned career? What karmic lesson is currently active in my romantic partnership?"
                 value={formData.specificQuestion}
                 onChange={(e) => setFormData({ ...formData, specificQuestion: e.target.value })}
-                className="w-full px-4 py-3 rounded-2xl bg-[#FAF7EE] dark:bg-[#121B26] border border-[#C59758]/40 text-[#221A14] dark:text-[#F5F3EF] text-sm focus:outline-none focus:border-[#C59758] resize-none"
+                className="w-full px-4 py-3 rounded-2xl bg-[#FAF7EE] dark:bg-[#121B26] border-2 border-[#C59758]/30 dark:border-[#D5AE63]/30 text-[#221A14] dark:text-[#F5F3EF] text-sm focus:outline-none focus:border-[#C59758] dark:focus:border-[#D5AE63] focus:ring-2 focus:ring-[#C59758]/20 resize-none"
               />
             </div>
           </div>

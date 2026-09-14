@@ -130,17 +130,23 @@ class SoundEngine {
   }
 
   /**
-   * Toggle mute
+   * Set mute state explicitly
    */
-  public toggleMute(): boolean {
-    this.isMuted = !this.isMuted;
+  public setMuted(muted: boolean) {
+    this.isMuted = muted;
     const ctx = this.getAudioContext();
     if (this.masterGain && ctx) {
       const targetGain = this.isMuted ? 0.0001 : 1.0;
       this.masterGain.gain.setValueAtTime(this.masterGain.gain.value, ctx.currentTime);
-      this.masterGain.gain.exponentialRampToValueAtTime(targetGain, ctx.currentTime + 0.2);
+      this.masterGain.gain.exponentialRampToValueAtTime(targetGain, ctx.currentTime + 0.15);
     }
-    return this.isMuted;
+  }
+
+  /**
+   * Toggle mute
+   */
+  public toggleMute(): boolean {
+    return this.setMuted(!this.isMuted), this.isMuted;
   }
 
   public getMuted(): boolean {

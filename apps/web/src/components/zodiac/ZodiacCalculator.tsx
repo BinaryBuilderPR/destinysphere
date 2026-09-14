@@ -88,10 +88,10 @@ export function ZodiacCalculator() {
                 <select
                   value={birthMonth}
                   onChange={(e) => setBirthMonth(Number(e.target.value))}
-                  className="w-full px-4 py-3 rounded-2xl bg-[#FAF7EE] dark:bg-[#121B26] border border-[#C59758]/40 text-[#221A14] dark:text-[#F5F3EF] text-sm font-semibold focus:outline-none focus:border-[#C59758] transition-all cursor-pointer shadow-inner"
+                  className="sacred-select w-full px-4 py-3.5 rounded-2xl bg-[#FAF7EE] dark:bg-[#121B26] border-2 border-[#C59758]/30 dark:border-[#D5AE63]/30 text-[#221A14] dark:text-[#F5F3EF] text-sm font-semibold focus:outline-none focus:border-[#C59758] dark:focus:border-[#D5AE63] focus:ring-2 focus:ring-[#C59758]/20 transition-all cursor-pointer shadow-xs"
                 >
                   {MONTHS.map((m, idx) => (
-                    <option key={m} value={idx + 1} className="bg-white dark:bg-[#121B26]">
+                    <option key={m} value={idx + 1}>
                       {idx + 1} • {m}
                     </option>
                   ))}
@@ -106,10 +106,10 @@ export function ZodiacCalculator() {
                 <select
                   value={birthDay}
                   onChange={(e) => setBirthDay(Number(e.target.value))}
-                  className="w-full px-4 py-3 rounded-2xl bg-[#FAF7EE] dark:bg-[#121B26] border border-[#C59758]/40 text-[#221A14] dark:text-[#F5F3EF] text-sm font-semibold focus:outline-none focus:border-[#C59758] transition-all cursor-pointer shadow-inner"
+                  className="sacred-select w-full px-4 py-3.5 rounded-2xl bg-[#FAF7EE] dark:bg-[#121B26] border-2 border-[#C59758]/30 dark:border-[#D5AE63]/30 text-[#221A14] dark:text-[#F5F3EF] text-sm font-semibold focus:outline-none focus:border-[#C59758] dark:focus:border-[#D5AE63] focus:ring-2 focus:ring-[#C59758]/20 transition-all cursor-pointer shadow-xs"
                 >
                   {Array.from({ length: 31 }, (_, i) => i + 1).map((d) => (
-                    <option key={d} value={d} className="bg-white dark:bg-[#121B26]">
+                    <option key={d} value={d}>
                       {d}
                     </option>
                   ))}
@@ -124,10 +124,10 @@ export function ZodiacCalculator() {
                 <select
                   value={birthYear}
                   onChange={(e) => setBirthYear(Number(e.target.value))}
-                  className="w-full px-4 py-3 rounded-2xl bg-[#FAF7EE] dark:bg-[#121B26] border border-[#C59758]/40 text-[#221A14] dark:text-[#F5F3EF] text-sm font-semibold focus:outline-none focus:border-[#C59758] transition-all cursor-pointer shadow-inner"
+                  className="sacred-select w-full px-4 py-3.5 rounded-2xl bg-[#FAF7EE] dark:bg-[#121B26] border-2 border-[#C59758]/30 dark:border-[#D5AE63]/30 text-[#221A14] dark:text-[#F5F3EF] text-sm font-semibold focus:outline-none focus:border-[#C59758] dark:focus:border-[#D5AE63] focus:ring-2 focus:ring-[#C59758]/20 transition-all cursor-pointer shadow-xs"
                 >
                   {Array.from({ length: 100 }, (_, i) => 2026 - i).map((y) => (
-                    <option key={y} value={y} className="bg-white dark:bg-[#121B26]">
+                    <option key={y} value={y}>
                       {y}
                     </option>
                   ))}
@@ -136,13 +136,13 @@ export function ZodiacCalculator() {
             </div>
 
             {/* Optional Time of Birth Accordion Toggle */}
-            <div className="pt-2 border-t border-[#C59758]/20 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div className="pt-3 border-t border-[#C59758]/20 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
               <label className="inline-flex items-center gap-2.5 cursor-pointer select-none">
                 <input
                   type="checkbox"
                   checked={knowsTime}
                   onChange={(e) => setKnowsTime(e.target.checked)}
-                  className="w-4 h-4 rounded border-[#C59758] text-[#C59758] focus:ring-[#C59758] accent-[#C59758] cursor-pointer"
+                  className="w-4 h-4 rounded border-[#C59758] text-[#C59758] focus:ring-[#C59758] cursor-pointer"
                 />
                 <span className="text-xs sm:text-sm font-medium text-[#221A14] dark:text-[#F5F3EF]">
                   Include Birth Time <span className="text-[#C59758] dark:text-[#D5AE63] text-xs font-semibold">(Calculates Exact Moon & Rising Sign)</span>
@@ -154,7 +154,7 @@ export function ZodiacCalculator() {
                   <select
                     value={birthHour}
                     onChange={(e) => setBirthHour(Number(e.target.value))}
-                    className="px-3 py-1.5 rounded-xl bg-[#FAF7EE] dark:bg-[#121B26] border border-[#C59758]/40 text-xs font-semibold text-[#221A14] dark:text-[#F5F3EF]"
+                    className="sacred-select px-3.5 py-2 rounded-xl bg-[#FAF7EE] dark:bg-[#121B26] border border-[#C59758]/40 text-xs font-semibold text-[#221A14] dark:text-[#F5F3EF]"
                   >
                     {Array.from({ length: 12 }, (_, i) => i + 1).map((h) => (
                       <option key={h} value={h}>
@@ -165,7 +165,7 @@ export function ZodiacCalculator() {
                   <select
                     value={birthPeriod}
                     onChange={(e) => setBirthPeriod(e.target.value as "AM" | "PM")}
-                    className="px-3 py-1.5 rounded-xl bg-[#FAF7EE] dark:bg-[#121B26] border border-[#C59758]/40 text-xs font-semibold text-[#221A14] dark:text-[#F5F3EF]"
+                    className="sacred-select px-3.5 py-2 rounded-xl bg-[#FAF7EE] dark:bg-[#121B26] border border-[#C59758]/40 text-xs font-semibold text-[#221A14] dark:text-[#F5F3EF]"
                   >
                     <option value="AM">AM</option>
                     <option value="PM">PM</option>
@@ -175,14 +175,16 @@ export function ZodiacCalculator() {
             </div>
 
             {/* Calculate Button */}
-            <button
-              type="submit"
-              className="w-full sm:w-auto sm:self-center px-8 py-3.5 rounded-2xl bg-gradient-to-r from-[#C59758] via-[#D5AE63] to-[#B9684D] text-white font-serif font-bold text-base shadow-xl hover:shadow-2xl hover:scale-102 active:scale-98 transition-all cursor-pointer flex items-center justify-center gap-2"
-            >
-              <span>🔮</span>
-              <span>Calculate My Astrological Sign & Chart</span>
-              <span>✦</span>
-            </button>
+            <div className="flex justify-center pt-2">
+              <button
+                type="submit"
+                className="w-full sm:w-auto px-10 py-4 rounded-full bg-linear-to-r from-[#B9684D] via-[#C59758] to-[#D5AE63] hover:opacity-95 text-white dark:text-[#020912] font-serif font-bold text-base shadow-[0_4px_25px_rgba(197,151,88,0.35)] hover:shadow-[0_6px_30px_rgba(197,151,88,0.5)] hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer flex items-center justify-center gap-2.5"
+              >
+                <span>🔮</span>
+                <span>Calculate My Astrological Sign & Chart</span>
+                <span>✨</span>
+              </button>
+            </div>
           </form>
         </div>
       </div>

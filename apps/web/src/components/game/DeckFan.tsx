@@ -82,8 +82,18 @@ export function DeckFan({
         </div>
       </div>
 
-      {/* Fanned Arc Container */}
-      <div className="relative w-full h-[220px] sm:h-[270px] md:h-[310px] flex items-center justify-center overflow-visible">
+      {/* Fanned Arc Container - Auto-plays when mouse enters, automatically mutes when mouse leaves */}
+      <div
+        onMouseEnter={() => {
+          audioEngine.startAmbientTone();
+          audioEngine.setMuted(false);
+        }}
+        onMouseLeave={() => {
+          setHoveredIdx(null);
+          audioEngine.setMuted(true);
+        }}
+        className="relative w-full h-[220px] sm:h-[270px] md:h-[310px] flex items-center justify-center overflow-visible"
+      >
         {shuffledDeck.map((card, idx) => {
           const total = shuffledDeck.length;
           const mid = (total - 1) / 2;
