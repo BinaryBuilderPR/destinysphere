@@ -9,19 +9,15 @@ export const navigation: NavigationItem[] = [
     href: "/",
   },
   {
-    label: "Readings",
-    href: "/readings",
+    label: "Services",
+    href: "#readings",
   },
   {
     label: "Articles",
     href: "/articles",
   },
   {
-    label: "Compatibility",
-    href: "/compatibility",
-  },
-  {
-    label: "About",
+    label: "About Us",
     href: "/about",
   },
   {

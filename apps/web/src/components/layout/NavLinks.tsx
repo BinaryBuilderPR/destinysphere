@@ -8,10 +8,12 @@ import { cn } from "@/lib/utils";
 
 interface NavLinksProps {
   mobile?: boolean;
+  onItemClick?: () => void;
 }
 
 export default function NavLinks({
   mobile = false,
+  onItemClick,
 }: NavLinksProps) {
   const pathname = usePathname();
 
@@ -19,22 +21,24 @@ export default function NavLinks({
     <nav
       className={cn(
         mobile
-          ? "flex flex-col gap-5"
-          : "hidden items-center gap-8 lg:flex"
+          ? "flex flex-col gap-4"
+          : "hidden items-center gap-7 lg:flex"
       )}
     >
       {navigation.map((item) => {
-        const active = pathname === item.href;
+        const active = pathname === item.href || (item.href !== "/" && pathname.startsWith(item.href));
 
         return (
           <Link
-            key={item.href}
+            key={item.label}
             href={item.href}
+            onClick={onItemClick}
             className={cn(
-              "transition-colors hover:text-amber-500",
+              "text-sm font-medium tracking-wide transition-colors duration-200",
+              mobile && "py-1 text-base",
               active
-                ? "font-semibold text-amber-500"
-                : "text-muted-foreground"
+                ? "font-semibold text-[var(--accent-brand)] dark:text-[var(--accent-gold)]"
+                : "text-muted-foreground hover:text-foreground"
             )}
           >
             {item.label}

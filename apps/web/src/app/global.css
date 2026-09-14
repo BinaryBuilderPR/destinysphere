@@ -1,13 +1,47 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-serif: var(--font-heading), "Cormorant Garamond", Georgia, serif;
+  --font-sans: var(--font-body), "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-heading: var(--font-heading), "Cormorant Garamond", Georgia, serif;
+  --font-body: var(--font-body), "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  --color-gold: var(--accent-gold);
+  --color-accent: var(--accent-brand);
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #FAF7EE;
+  --card: #FFFDF8;
+  --card-foreground: #221A14;
+  --popover: #FFFDF8;
+  --popover-foreground: #221A14;
+  --foreground: #221A14;
+  --muted-surface: #F2ECE0;
+  --muted-foreground: #6A655C;
+  --border: rgba(34, 26, 20, 0.12);
+  --accent-gold: #C59758;
+  --accent-brand: #B9684D;
+  --primary: #B9684D;
+  --primary-foreground: #FFFFFF;
 }
 
 .dark {
-  --background: #09090b;
-  --foreground: #fafafa;
+  --background: #020912;
+  --card: #0B121B;
+  --card-foreground: #F5F3EF;
+  --popover: #0B121B;
+  --popover-foreground: #F5F3EF;
+  --foreground: #F5F3EF;
+  --muted-surface: #121C28;
+  --muted-foreground: #AAA7A1;
+  --border: rgba(245, 243, 239, 0.12);
+  --accent-gold: #D5AE63;
+  --accent-brand: #9B574B;
+  --primary: #D5AE63;
+  --primary-foreground: #020912;
 }
 
 html {
@@ -17,6 +51,16 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
+  font-family: var(--font-body), "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   margin: 0;
   min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading), "Cormorant Garamond", Georgia, serif;
 }
