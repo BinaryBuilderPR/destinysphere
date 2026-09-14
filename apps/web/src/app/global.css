@@ -9,7 +9,11 @@
   --font-body: var(--font-body), "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 
   --color-gold: var(--accent-gold);
+  --color-accent-gold: var(--accent-gold);
+  --color-accent-brand: var(--accent-brand);
   --color-accent: var(--accent-brand);
+  --color-border: var(--border);
+  --color-card: var(--card);
 }
 
 :root {

@@ -224,7 +224,7 @@ export default function ReadingsSection() {
           </div>
         </div>
 
-        {/* 7-Card Responsive Grid with Large Icons and Bold Typography */}
+        {/* 7-Card Responsive Grid with Sacred Gold Accents & Rich Typography */}
         <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-3 sm:gap-4 lg:gap-3.5">
           {readings.map((item, index) => {
             const IconComponent = item.icon;
@@ -234,28 +234,28 @@ export default function ReadingsSection() {
                 key={item.id}
                 href={item.href}
                 className={cn(
-                  "group relative flex flex-col justify-between items-center text-center rounded-2xl border border-[#EBE6DA] dark:border-[#D5AE63]/20 bg-white dark:bg-[#0B121B] p-3.5 sm:p-5 transition-all duration-300 hover:-translate-y-1.5 hover:border-accent-gold/70 hover:shadow-md",
+                  "group relative flex flex-col justify-between items-center text-center rounded-2xl border border-[#C59758]/25 dark:border-[#D5AE63]/20 bg-[#FFFDF8] dark:bg-[#0B121B] p-3.5 sm:p-4.5 transition-all duration-300 hover:-translate-y-1.5 hover:border-[#C59758] dark:hover:border-[#D5AE63] hover:shadow-[0_10px_25px_-5px_rgba(197,151,88,0.2)]",
                   isLastOdd && "col-span-2 sm:col-span-1 md:col-span-1"
                 )}
               >
-                {/* Visual Icon Vector */}
-                <div className="mb-3 sm:mb-5 flex h-14 w-14 sm:h-18 sm:w-18 items-center justify-center text-accent-gold transition-transform duration-300 group-hover:scale-110">
-                  <IconComponent className="h-12 w-12 sm:h-16 sm:w-16" />
+                {/* Visual Icon Vector with Glowing Gold Background */}
+                <div className="mb-3 sm:mb-4 flex h-14 w-14 sm:h-16 sm:w-16 items-center justify-center rounded-2xl bg-[#C59758]/15 dark:bg-[#D5AE63]/15 text-[#C59758] dark:text-[#D5AE63] border border-[#C59758]/30 dark:border-[#D5AE63]/30 transition-all duration-300 group-hover:scale-110 group-hover:bg-[#C59758]/25 shadow-xs">
+                  <IconComponent className="h-9 w-9 sm:h-10 sm:w-10" />
                 </div>
 
                 <div className="flex-1 flex flex-col items-center">
-                  <h3 className="font-serif text-base sm:text-lg font-bold text-foreground mb-1 sm:mb-1.5 group-hover:text-[#B9684D] dark:group-hover:text-[#D5AE63] transition-colors line-clamp-1">
+                  <h3 className="font-serif text-sm sm:text-base font-bold text-foreground mb-1 group-hover:text-[#B9684D] dark:group-hover:text-[#D5AE63] transition-colors leading-snug">
                     {item.title}
                   </h3>
-                  <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed line-clamp-2">
+                  <p className="text-[11px] sm:text-xs text-muted-foreground leading-relaxed line-clamp-2">
                     {item.description}
                   </p>
                 </div>
 
                 {/* Centered CTA Link */}
-                <div className="mt-3.5 sm:mt-5 pt-2 sm:pt-3 border-t border-border/60 w-full flex items-center justify-center gap-1 sm:gap-1.5 text-xs sm:text-sm font-bold text-[#B9684D] dark:text-[#D5AE63] transition-all group-hover:gap-2">
+                <div className="mt-3.5 sm:mt-4 pt-2.5 border-t border-[#C59758]/20 dark:border-[#D5AE63]/20 w-full flex items-center justify-center gap-1.5 text-xs sm:text-sm font-bold text-[#B9684D] dark:text-[#D5AE63] transition-all group-hover:gap-2">
                   <span>Get Reading</span>
-                  <ArrowRight className="h-3 w-3 sm:h-3.5 sm:w-3.5 transition-transform" />
+                  <ArrowRight className="h-3.5 w-3.5 transition-transform" />
                 </div>
               </Link>
             );
