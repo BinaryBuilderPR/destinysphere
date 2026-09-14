@@ -11,15 +11,9 @@ export default function HeroArtwork() {
       {/* Rotating Sacred Constellation Ring */}
       <div className="absolute -inset-6 rounded-full border border-dashed border-[#C59758]/30 dark:border-[#D5AE63]/30 animate-rotate-slow pointer-events-none" />
 
-      {/* Generated Artwork Container with feathered radial mask & floating motion */}
-      <div
-        className="relative w-full transition-all duration-300 animate-float-slow"
-        style={{
-          maskImage: "radial-gradient(circle at center, black 68%, rgba(0,0,0,0.9) 82%, transparent 100%)",
-          WebkitMaskImage: "radial-gradient(circle at center, black 68%, rgba(0,0,0,0.9) 82%, transparent 100%)",
-        }}
-      >
-        {/* Light Mode Hero Illustration */}
+      {/* Generated Artwork Container with organic floating motion */}
+      <div className="relative w-full transition-all duration-300 animate-float-slow">
+        {/* Light Mode Hero Illustration - Perfectly Blended */}
         <div className="block dark:hidden">
           <Image
             src="/hero-generated-light.jpg"
@@ -28,8 +22,8 @@ export default function HeroArtwork() {
             height={530}
             priority
             sizes="(max-width: 640px) 340px, (max-width: 1024px) 460px, 530px"
-            style={{ width: "100%", height: "auto" }}
-            className="object-contain mix-blend-multiply pointer-events-none drop-shadow-[0_15px_35px_rgba(197,151,88,0.25)]"
+            style={{ width: "100%", height: "auto", filter: "contrast(1.06) brightness(1.02)" }}
+            className="object-contain mix-blend-multiply pointer-events-none"
           />
         </div>
 
@@ -43,7 +37,7 @@ export default function HeroArtwork() {
             priority
             sizes="(max-width: 640px) 340px, (max-width: 1024px) 460px, 530px"
             style={{ width: "100%", height: "auto" }}
-            className="object-contain pointer-events-none drop-shadow-[0_15px_45px_rgba(213,174,99,0.3)]"
+            className="object-contain pointer-events-none"
           />
         </div>
       </div>
