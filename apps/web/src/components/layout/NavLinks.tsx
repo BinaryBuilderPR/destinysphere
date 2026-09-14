@@ -36,11 +36,11 @@ export default function NavLinks({
             href={item.href}
             onClick={onItemClick}
             className={cn(
-              "inline-flex items-center gap-1 text-sm font-semibold tracking-wide transition-colors duration-200",
-              mobile && "py-1 text-base",
+              "inline-flex items-center gap-1.5 text-[15px] sm:text-base font-semibold tracking-normal transition-colors duration-200",
+              mobile && "py-1.5 text-lg",
               active
                 ? "font-bold text-[#B9684D] dark:text-[#D5AE63]"
-                : "text-foreground/80 hover:text-foreground"
+                : "text-foreground/85 hover:text-foreground"
             )}
           >
             <span>{item.label}</span>

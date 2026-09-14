@@ -29,8 +29,8 @@ export default function ArticlesSection() {
           </h2>
         </div>
 
-        {/* Category Pills Filter */}
-        <div className="flex flex-wrap items-center gap-2 sm:gap-2.5 mb-10 pb-2 overflow-x-auto scrollbar-none">
+        {/* Category Pills Filter (Swipeable on mobile) */}
+        <div className="flex items-center gap-2 sm:gap-2.5 mb-8 sm:mb-10 pb-2 overflow-x-auto scrollbar-none -mx-4 px-4 sm:mx-0 sm:px-0">
           {ARTICLE_CATEGORIES.map((cat) => {
             const isSelected = selectedCategory === cat;
             return (
@@ -38,7 +38,7 @@ export default function ArticlesSection() {
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
                 className={cn(
-                  "rounded-lg px-4 py-1.5 text-xs sm:text-sm font-medium transition-all duration-200 select-none cursor-pointer",
+                  "rounded-lg px-4 py-2 text-xs sm:text-[15px] font-medium transition-all duration-200 select-none cursor-pointer whitespace-nowrap shrink-0",
                   isSelected
                     ? "bg-[#B9684D] dark:bg-[#D5AE63] text-white dark:text-[#020912] font-semibold shadow-xs"
                     : "border border-[#EBE6DA] dark:border-[#2A3441] bg-white dark:bg-[#0B121B] text-muted-foreground hover:text-foreground hover:border-[var(--accent-gold)]/50"
@@ -51,7 +51,7 @@ export default function ArticlesSection() {
         </div>
 
         {/* Articles Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {filteredArticles.map((article) => (
             <Link
               key={article.id}
@@ -73,23 +73,23 @@ export default function ArticlesSection() {
               <div className="flex flex-1 flex-col justify-between p-5">
                 <div>
                   {/* Category Pill Tag Badge */}
-                  <span className="inline-block rounded-md bg-[#FAF0E6] dark:bg-[#251A14] px-2.5 py-0.5 text-xs font-semibold text-[#B9684D] dark:text-[#D5AE63] mb-2.5">
+                  <span className="inline-block rounded-md bg-[#FAF0E6] dark:bg-[#251A14] px-3 py-1 text-xs font-bold text-[#B9684D] dark:text-[#D5AE63] mb-2.5">
                     {article.category}
                   </span>
 
                   {/* Title */}
-                  <h3 className="font-serif text-lg font-bold leading-snug text-foreground group-hover:text-[#B9684D] dark:group-hover:text-[#D5AE63] transition-colors mb-2 line-clamp-2">
+                  <h3 className="font-serif text-[19px] sm:text-xl font-bold leading-snug text-foreground group-hover:text-[#B9684D] dark:group-hover:text-[#D5AE63] transition-colors mb-2 line-clamp-2">
                     {article.title}
                   </h3>
 
                   {/* Description */}
-                  <p className="text-xs leading-relaxed text-muted-foreground line-clamp-2 mb-4 font-normal">
+                  <p className="text-xs sm:text-[13.5px] leading-relaxed text-muted-foreground line-clamp-2 mb-4 font-normal">
                     {article.description}
                   </p>
                 </div>
 
                 {/* Footer Metadata */}
-                <div className="pt-3 border-t border-[var(--border)]/60 flex items-center justify-between text-[11px] text-muted-foreground">
+                <div className="pt-3 border-t border-[var(--border)]/60 flex items-center justify-between text-xs text-muted-foreground">
                   <span>{article.date}</span>
                   <span>•</span>
                   <span>{article.readTime}</span>
@@ -102,7 +102,7 @@ export default function ArticlesSection() {
         {/* View All Articles CTA */}
         <div className="mt-12 flex justify-center">
           <Link href="/articles">
-            <Button className="rounded-full bg-[#B9684D] hover:opacity-90 dark:bg-[#D5AE63] dark:hover:opacity-90 dark:text-[#020912] text-white px-8 py-5 text-sm font-semibold shadow-xs transition-all duration-200 cursor-pointer">
+            <Button className="rounded-full bg-[#B9684D] hover:opacity-90 dark:bg-[#D5AE63] dark:hover:opacity-90 dark:text-[#020912] text-white px-9 py-6 text-[15px] sm:text-base font-semibold shadow-xs transition-all duration-200 cursor-pointer">
               View All Articles ({articles.length})
             </Button>
           </Link>

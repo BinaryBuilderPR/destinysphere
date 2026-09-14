@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Container from "@/components/layout/Container";
 import { ArrowRight } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 interface ReadingItem {
   id: string;
@@ -224,36 +225,40 @@ export default function ReadingsSection() {
         </div>
 
         {/* 7-Card Responsive Grid with Large Icons and Bold Typography */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-4 lg:gap-3.5">
-          {readings.map((item) => {
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-3 sm:gap-4 lg:gap-3.5">
+          {readings.map((item, index) => {
             const IconComponent = item.icon;
+            const isLastOdd = index === readings.length - 1;
             return (
               <Link
                 key={item.id}
                 href={item.href}
-                className="group relative flex flex-col justify-between items-center text-center rounded-2xl border border-[#EBE6DA] dark:border-[#D5AE63]/20 bg-white dark:bg-[#0B121B] p-5 transition-all duration-300 hover:-translate-y-1.5 hover:border-[var(--accent-gold)]/70 hover:shadow-md"
+                className={cn(
+                  "group relative flex flex-col justify-between items-center text-center rounded-2xl border border-[#EBE6DA] dark:border-[#D5AE63]/20 bg-white dark:bg-[#0B121B] p-3.5 sm:p-5 transition-all duration-300 hover:-translate-y-1.5 hover:border-[var(--accent-gold)]/70 hover:shadow-md",
+                  isLastOdd && "col-span-2 sm:col-span-1 md:col-span-1"
+                )}
               >
                 <div className="flex flex-col items-center w-full">
-                  {/* Large Prominent Celestial Icon */}
-                  <div className="mb-5 flex h-18 w-18 items-center justify-center text-[var(--accent-gold)] transition-transform duration-300 group-hover:scale-110">
-                    <IconComponent className="h-16 w-16" />
+                  {/* Prominent Celestial Icon */}
+                  <div className="mb-3 sm:mb-5 flex h-14 w-14 sm:h-18 sm:w-18 items-center justify-center text-[var(--accent-gold)] transition-transform duration-300 group-hover:scale-110">
+                    <IconComponent className="h-12 w-12 sm:h-16 sm:w-16" />
                   </div>
 
                   {/* Bold Card Heading */}
-                  <h3 className="font-serif text-lg font-bold leading-snug text-foreground mb-2.5">
+                  <h3 className="font-serif text-base sm:text-[19px] lg:text-xl font-bold leading-snug text-foreground mb-1.5 sm:mb-2.5">
                     {item.title}
                   </h3>
 
                   {/* Centered Description */}
-                  <p className="text-[11.5px] leading-relaxed text-muted-foreground font-normal">
+                  <p className="text-[11px] sm:text-xs lg:text-[13px] leading-relaxed text-muted-foreground font-normal line-clamp-2 sm:line-clamp-none">
                     {item.description}
                   </p>
                 </div>
 
                 {/* Centered CTA Link */}
-                <div className="mt-5 pt-3 border-t border-[var(--border)]/60 w-full flex items-center justify-center gap-1.5 text-xs font-bold text-[#B9684D] dark:text-[#D5AE63] transition-all group-hover:gap-2">
+                <div className="mt-3.5 sm:mt-5 pt-2 sm:pt-3 border-t border-[var(--border)]/60 w-full flex items-center justify-center gap-1 sm:gap-1.5 text-xs sm:text-sm font-bold text-[#B9684D] dark:text-[#D5AE63] transition-all group-hover:gap-2">
                   <span>Get Reading</span>
-                  <ArrowRight className="h-3 w-3 transition-transform" />
+                  <ArrowRight className="h-3 w-3 sm:h-3.5 sm:w-3.5 transition-transform" />
                 </div>
               </Link>
             );

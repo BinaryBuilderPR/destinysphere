@@ -18,9 +18,9 @@ export default function Navbar() {
             {/* Pill Capsule Theme Toggle */}
             <ThemeToggle />
 
-            {/* Login Button - Exact matching height (h-9), pill curvature, and styling */}
+            {/* Login Button - Matching pill curvature and larger font */}
             <Link href="/login" className="hidden sm:block">
-              <button className="h-9 px-6 rounded-full inline-flex items-center justify-center text-sm font-medium transition-all duration-200 shadow-2xs bg-[#B9684D] hover:bg-[#A8583E] text-white border border-transparent dark:bg-transparent dark:border-[#D5AE63] dark:text-[#D5AE63] dark:hover:bg-[#D5AE63]/10 cursor-pointer">
+              <button className="h-10 px-6 rounded-full inline-flex items-center justify-center text-[15px] font-semibold transition-all duration-200 shadow-2xs bg-[#B9684D] hover:bg-[#A8583E] text-white border border-transparent dark:bg-transparent dark:border-[#D5AE63] dark:text-[#D5AE63] dark:hover:bg-[#D5AE63]/10 cursor-pointer">
                 Login
               </button>
             </Link>
