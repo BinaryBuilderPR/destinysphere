@@ -135,7 +135,7 @@ export default function Footer() {
             </h4>
             <div className="flex flex-col gap-2.5 text-sm text-muted-foreground">
               <Link href="/about" className="hover:text-[#B9684D] dark:hover:text-[#D5AE63] transition-colors duration-200">About Us</Link>
-              <Link href="/practitioners" className="hover:text-[#B9684D] dark:hover:text-[#D5AE63] transition-colors duration-200">Verified Astrologers</Link>
+              <Link href="/astrologers" className="hover:text-[#B9684D] dark:hover:text-[#D5AE63] transition-colors duration-200">Verified Astrologers</Link>
               <Link href="/contact" className="hover:text-[#B9684D] dark:hover:text-[#D5AE63] transition-colors duration-200">Contact Support</Link>
               <Link href="/privacy" className="hover:text-[#B9684D] dark:hover:text-[#D5AE63] transition-colors duration-200">Privacy Policy</Link>
               <Link href="/terms" className="hover:text-[#B9684D] dark:hover:text-[#D5AE63] transition-colors duration-200">Terms of Service</Link>

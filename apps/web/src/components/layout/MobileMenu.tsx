@@ -75,8 +75,43 @@ export default function MobileMenu() {
           </div>
 
           {/* Navigation Links */}
-          <nav className="mt-6 flex flex-col gap-2">
+          <nav className="mt-6 flex flex-col gap-1.5">
             {navigation.map((item) => {
+              if (item.children && item.children.length > 0) {
+                return (
+                  <div key={item.label} className="flex flex-col gap-1 py-1">
+                    <div className="px-4 py-1 flex items-center justify-between text-xs font-serif uppercase tracking-wider font-bold text-[#C59758] dark:text-[#D5AE63]">
+                      <span>{item.label}</span>
+                      <span className="text-[10px] lowercase tracking-normal px-2 py-0.5 rounded-full bg-[#C59758]/15 border border-[#C59758]/30">
+                        100% free
+                      </span>
+                    </div>
+                    {item.children.map((sub) => {
+                      const isSubActive = pathname === sub.href;
+                      return (
+                        <Link
+                          key={sub.label}
+                          href={sub.href}
+                          onClick={() => setIsOpen(false)}
+                          className={cn(
+                            "flex items-center justify-between px-4 py-2.5 rounded-2xl text-[15px] font-semibold transition-all duration-200 touch-manipulation pl-6",
+                            isSubActive
+                              ? "bg-[#B9684D]/15 dark:bg-[#D5AE63]/20 text-[#B9684D] dark:text-[#D5AE63] font-bold"
+                              : "text-foreground hover:bg-white/80 dark:hover:bg-[#0B121B] hover:text-[#B9684D] dark:hover:text-[#D5AE63] active:bg-muted"
+                          )}
+                        >
+                          <div className="flex items-center gap-2.5">
+                            <span className="text-base">{sub.icon || "✦"}</span>
+                            <span>{sub.label}</span>
+                          </div>
+                          <ChevronRight className="h-4 w-4 opacity-50" />
+                        </Link>
+                      );
+                    })}
+                  </div>
+                );
+              }
+
               const active = pathname === item.href || (item.href !== "/" && pathname.startsWith(item.href));
               return (
                 <Link
@@ -84,7 +119,7 @@ export default function MobileMenu() {
                   href={item.href}
                   onClick={() => setIsOpen(false)}
                   className={cn(
-                    "flex items-center justify-between px-4 py-3.5 rounded-2xl text-[16px] font-semibold transition-all duration-200 touch-manipulation",
+                    "flex items-center justify-between px-4 py-3 rounded-2xl text-[15px] font-semibold transition-all duration-200 touch-manipulation",
                     active
                       ? "bg-[#B9684D]/15 dark:bg-[#D5AE63]/20 text-[#B9684D] dark:text-[#D5AE63] font-bold"
                       : "text-foreground hover:bg-white/80 dark:hover:bg-[#0B121B] hover:text-[#B9684D] dark:hover:text-[#D5AE63] active:bg-muted"

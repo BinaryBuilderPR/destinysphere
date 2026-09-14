@@ -32,10 +32,11 @@ export default function HeroSection() {
           {/* Left Column Content */}
           <div className="lg:col-span-6 flex flex-col items-start text-left z-10">
             {/* Pill Badge */}
-            <div className="inline-flex items-center gap-2 rounded-full border border-[var(--border)] dark:border-[#D5AE63]/40 bg-[var(--card)]/80 px-4 py-2 text-sm font-semibold text-muted-foreground shadow-2xs backdrop-blur-xs mb-6">
-              <Sparkles className="h-4 w-4 text-[var(--accent-gold)]" />
-              <span>Trusted Guidance, Divine Clarity</span>
-            </div>
+            <Link href="/game" className="group inline-flex items-center gap-2 rounded-full border border-[#C59758]/40 dark:border-[#D5AE63]/40 bg-[var(--card)]/80 hover:bg-[#C59758]/10 px-4 py-2 text-sm font-semibold text-muted-foreground shadow-2xs backdrop-blur-xs mb-6 transition-all">
+              <Sparkles className="h-4 w-4 text-[var(--accent-gold)] group-hover:scale-110 transition-transform" />
+              <span>Free 3-Card Tarot Oracle • Live Reading</span>
+              <span className="text-xs text-[#C59758] dark:text-[#D5AE63] font-bold">Try Now →</span>
+            </Link>
 
             {/* Main Headline */}
             <h1 className="font-serif text-4xl sm:text-5xl lg:text-[64px] font-normal leading-[1.1] tracking-tight text-foreground text-balance">
@@ -45,23 +46,25 @@ export default function HeroSection() {
 
             {/* Subtitle */}
             <p className="mt-5 text-lg sm:text-xl text-muted-foreground max-w-xl font-normal leading-relaxed">
-              Personalized readings to guide your path and illuminate your future with divine wisdom.
+              Personalized readings and interactive oracle spreads to guide your path and illuminate your future with divine wisdom.
             </p>
 
             {/* Action Buttons */}
             <div className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 sm:gap-4 w-full sm:w-auto">
-              <Link href="/readings" className="w-full sm:w-auto">
-                <Button className="w-full sm:w-auto rounded-full bg-[#B9684D] hover:bg-[#A8583E] dark:bg-[#D5AE63] dark:hover:bg-[#C49E53] dark:text-[#020912] text-white px-8 py-3.5 text-[15px] sm:text-base font-semibold shadow-xs transition-all duration-200 cursor-pointer">
-                  Explore Readings
+              <Link href="/game" className="w-full sm:w-auto">
+                <Button className="w-full sm:w-auto rounded-full bg-[#B9684D] hover:bg-[#A8583E] dark:bg-[#D5AE63] dark:hover:bg-[#C49E53] dark:text-[#020912] text-white px-7 py-3.5 text-[15px] sm:text-base font-semibold shadow-xs transition-all duration-200 cursor-pointer flex items-center justify-center gap-2">
+                  <span>Free Tarot Oracle</span>
+                  <span>🔮</span>
                 </Button>
               </Link>
 
-              <Link href="/articles" className="w-full sm:w-auto">
+              <Link href="/zodiac" className="w-full sm:w-auto">
                 <Button
                   variant="outline"
-                  className="w-full sm:w-auto rounded-full border border-[var(--border)] dark:border-[#D5AE63]/50 bg-transparent text-foreground hover:bg-[var(--card)] px-8 py-3.5 text-[15px] sm:text-base font-semibold transition-all duration-200 cursor-pointer"
+                  className="w-full sm:w-auto rounded-full border-2 border-[#C59758]/50 hover:border-[#C59758] bg-transparent text-foreground hover:bg-[#C59758]/10 px-7 py-3.5 text-[15px] sm:text-base font-semibold transition-all duration-200 cursor-pointer flex items-center justify-center gap-2"
                 >
-                  Read Articles
+                  <span>Free Zodiac Finder</span>
+                  <span>✨</span>
                 </Button>
               </Link>
             </div>
