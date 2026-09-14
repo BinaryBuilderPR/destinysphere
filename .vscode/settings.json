@@ -1,0 +1,4 @@
+{
+  "tailwindCSS.lint.suggestCanonicalClasses": "ignore",
+  "typescript.tsdk": "apps/web/node_modules/typescript/lib"
+}

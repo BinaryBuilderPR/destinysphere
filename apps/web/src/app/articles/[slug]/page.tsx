@@ -52,7 +52,7 @@ export default async function ArticleDetailPage({
           </h1>
 
           {/* Metadata Bar */}
-          <div className="flex flex-wrap items-center gap-4 text-xs text-muted-foreground pb-6 border-b border-[var(--border)]">
+          <div className="flex flex-wrap items-center gap-4 text-xs text-muted-foreground pb-6 border-b border-border">
             <div className="flex items-center gap-2 font-medium text-foreground">
               <div className="h-7 w-7 rounded-full bg-[#B9684D]/20 text-[#B9684D] dark:text-[#D5AE63] flex items-center justify-center font-bold text-xs">
                 {article.author.name[0]}
@@ -112,7 +112,7 @@ export default async function ArticleDetailPage({
           ))}
 
           {/* Key Takeaways Box */}
-          <div className="my-10 rounded-2xl border border-[var(--accent-gold)]/40 bg-[#FAF7EE] dark:bg-[#0B121B] p-6 shadow-xs">
+          <div className="my-10 rounded-2xl border border-accent-gold/40 bg-[#FAF7EE] dark:bg-[#0B121B] p-6 shadow-xs">
             <div className="flex items-center gap-2 font-serif text-lg font-bold text-foreground mb-4">
               <Sparkles className="h-5 w-5 text-[#B9684D] dark:text-[#D5AE63]" />
               <span>Key Spiritual Takeaways</span>
@@ -129,7 +129,7 @@ export default async function ArticleDetailPage({
         </article>
 
         {/* Consultation CTA Banner */}
-        <div className="my-12 rounded-2xl border border-[var(--border)] dark:border-[#D5AE63]/30 bg-gradient-to-r from-[#FAF0E6] to-[#FAF7EE] dark:from-[#0B121B] dark:to-[#151D2A] p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xs">
+        <div className="my-12 rounded-2xl border border-border dark:border-[#D5AE63]/30 bg-linear-to-r from-[#FAF0E6] to-[#FAF7EE] dark:from-[#0B121B] dark:to-[#151D2A] p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xs">
           <div>
             <h3 className="font-serif text-xl sm:text-2xl font-bold text-foreground mb-1.5">
               Seek Personalized Answers to Your Questions
@@ -147,7 +147,7 @@ export default async function ArticleDetailPage({
 
         {/* Related Articles */}
         {relatedArticles.length > 0 && (
-          <div className="mt-16 pt-10 border-t border-[var(--border)]">
+          <div className="mt-16 pt-10 border-t border-border">
             <h3 className="font-serif text-2xl font-bold text-foreground mb-6">
               Related Articles in {article.category}
             </h3>
@@ -156,7 +156,7 @@ export default async function ArticleDetailPage({
                 <Link
                   key={rel.id}
                   href={`/articles/${rel.slug}`}
-                  className="group flex flex-col rounded-xl border border-[var(--border)] bg-[var(--card)] overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:border-[var(--accent-gold)]/60"
+                  className="group flex flex-col rounded-xl border border-border bg-card overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:border-accent-gold/60"
                 >
                   <div className="relative h-32 w-full">
                     <Image

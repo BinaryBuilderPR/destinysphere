@@ -31,7 +31,7 @@ export interface RWSTarotCard {
     career: string;
     spirituality: string;
   };
-  yesOrNo: "Yes" | "No" | "Maybe / Conditional" | string;
+  yesOrNo: string;
   timing: string;
   symbolism: string[];
   astrologerNote: string;

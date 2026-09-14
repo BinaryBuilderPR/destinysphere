@@ -61,7 +61,7 @@ export default function ArticlesPage() {
                   "rounded-lg px-4 py-2 text-xs sm:text-sm font-medium transition-all duration-200 select-none cursor-pointer flex items-center gap-2",
                   isSelected
                     ? "bg-[#B9684D] dark:bg-[#D5AE63] text-white dark:text-[#020912] font-semibold shadow-xs"
-                    : "border border-[var(--border)] dark:border-[#2A3441] bg-[var(--card)] text-muted-foreground hover:text-foreground hover:border-[var(--accent-gold)]/50"
+                    : "border border-border dark:border-[#2A3441] bg-card text-muted-foreground hover:text-foreground hover:border-accent-gold/50"
                 )}
               >
                 <span>{cat}</span>
@@ -69,7 +69,7 @@ export default function ArticlesPage() {
                   "text-[10px] px-1.5 py-0.2 rounded-full",
                   isSelected
                     ? "bg-white/20 dark:bg-black/20"
-                    : "bg-[var(--border)] text-muted-foreground"
+                    : "bg-border text-muted-foreground"
                 )}>
                   {count}
                 </span>
@@ -84,7 +84,7 @@ export default function ArticlesPage() {
             <Link
               key={article.id}
               href={`/articles/${article.slug}`}
-              className="group flex flex-col overflow-hidden rounded-2xl border border-[var(--border)] dark:border-[#1E293B] bg-[var(--card)] transition-all duration-300 hover:-translate-y-1.5 hover:border-[var(--accent-gold)]/60 hover:shadow-lg"
+              className="group flex flex-col overflow-hidden rounded-2xl border border-border dark:border-[#1E293B] bg-card transition-all duration-300 hover:-translate-y-1.5 hover:border-accent-gold/60 hover:shadow-lg"
             >
               {/* Card Image */}
               <div className="relative h-48 w-full overflow-hidden bg-black/40">
@@ -117,7 +117,7 @@ export default function ArticlesPage() {
                 </div>
 
                 {/* Footer Metadata */}
-                <div className="pt-3 border-t border-[var(--border)]/60 flex items-center justify-between text-[11px] text-muted-foreground">
+                <div className="pt-3 border-t border-border/60 flex items-center justify-between text-[11px] text-muted-foreground">
                   <span>{article.date}</span>
                   <span>•</span>
                   <span>{article.readTime}</span>

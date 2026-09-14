@@ -17,7 +17,7 @@ export default function ArticlesSection() {
       : articles.filter((a) => a.category.toLowerCase() === selectedCategory.toLowerCase());
 
   return (
-    <section className="bg-white dark:bg-[#020912] py-16 md:py-24 border-t border-[var(--border)] transition-colors duration-200">
+    <section className="bg-white dark:bg-[#020912] py-16 md:py-24 border-t border-border transition-colors duration-200">
       <Container>
         {/* Section Header */}
         <div className="flex flex-col items-start mb-8 md:mb-10">
@@ -41,7 +41,7 @@ export default function ArticlesSection() {
                   "rounded-lg px-4 py-2 text-xs sm:text-[15px] font-medium transition-all duration-200 select-none cursor-pointer whitespace-nowrap shrink-0",
                   isSelected
                     ? "bg-[#B9684D] dark:bg-[#D5AE63] text-white dark:text-[#020912] font-semibold shadow-xs"
-                    : "border border-[#EBE6DA] dark:border-[#2A3441] bg-white dark:bg-[#0B121B] text-muted-foreground hover:text-foreground hover:border-[var(--accent-gold)]/50"
+                    : "border border-[#EBE6DA] dark:border-[#2A3441] bg-white dark:bg-[#0B121B] text-muted-foreground hover:text-foreground hover:border-accent-gold/50"
                 )}
               >
                 {cat}
@@ -56,7 +56,7 @@ export default function ArticlesSection() {
             <Link
               key={article.id}
               href={`/articles/${article.slug}`}
-              className="group flex flex-col overflow-hidden rounded-2xl border border-[#EBE6DA] dark:border-[#1E293B] bg-white dark:bg-[#0B121B] transition-all duration-300 hover:-translate-y-1.5 hover:border-[var(--accent-gold)]/60 hover:shadow-lg"
+              className="group flex flex-col overflow-hidden rounded-2xl border border-[#EBE6DA] dark:border-[#1E293B] bg-white dark:bg-[#0B121B] transition-all duration-300 hover:-translate-y-1.5 hover:border-accent-gold/60 hover:shadow-lg"
             >
               {/* Card Image */}
               <div className="relative h-44 w-full overflow-hidden bg-black/40">
@@ -89,7 +89,7 @@ export default function ArticlesSection() {
                 </div>
 
                 {/* Footer Metadata */}
-                <div className="pt-3 border-t border-[var(--border)]/60 flex items-center justify-between text-xs text-muted-foreground">
+                <div className="pt-3 border-t border-border/60 flex items-center justify-between text-xs text-muted-foreground">
                   <span>{article.date}</span>
                   <span>•</span>
                   <span>{article.readTime}</span>

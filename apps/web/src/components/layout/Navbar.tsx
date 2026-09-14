@@ -7,7 +7,7 @@ import MobileMenu from "./MobileMenu";
 
 export default function Navbar() {
   return (
-    <header className="sticky top-0 z-50 border-b border-[var(--border)] bg-background/85 backdrop-blur-md transition-colors duration-200">
+    <header className="sticky top-0 z-50 border-b border-border bg-background/85 backdrop-blur-md transition-colors duration-200">
       <Container>
         <div className="flex h-15 items-center justify-between gap-4">
           <Logo />

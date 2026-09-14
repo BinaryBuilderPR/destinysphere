@@ -138,7 +138,7 @@ const benefits = [
 
 export default function BenefitsSection() {
   return (
-    <section className="bg-white dark:bg-[#020912] py-10 sm:py-16 border-t border-[var(--border)] transition-colors duration-200">
+    <section className="bg-white dark:bg-[#020912] py-10 sm:py-16 border-t border-border transition-colors duration-200">
       <Container>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
           {benefits.map((item) => {

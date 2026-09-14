@@ -6,7 +6,7 @@ export default function HeroArtwork() {
   return (
     <div className="relative mx-auto flex w-full max-w-[340px] sm:max-w-[460px] lg:max-w-[530px] items-center justify-center select-none">
       {/* Ambient Celestial Glow */}
-      <div className="absolute -inset-4 rounded-full blur-3xl pointer-events-none bg-[var(--accent-gold)]/15 dark:bg-[#D5AE63]/15 transition-colors duration-500" />
+      <div className="absolute -inset-4 rounded-full blur-3xl pointer-events-none bg-accent-gold/15 dark:bg-[#D5AE63]/15 transition-colors duration-500" />
 
       {/* Generated Artwork Container with feathered radial mask */}
       <div

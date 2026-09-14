@@ -115,11 +115,11 @@ export function ZodiacGrid() {
       {selectedSign && (
         <div
           onClick={() => setSelectedSign(null)}
-          className="fixed inset-0 z-[9999] bg-[#020912]/85 backdrop-blur-md flex items-center justify-center p-4 animate-fade-in"
+          className="fixed inset-0 z-9999 bg-[#020912]/85 backdrop-blur-md flex items-center justify-center p-4 animate-fade-in"
         >
           <div
             onClick={(e) => e.stopPropagation()}
-            className="w-full max-w-2xl max-h-[85vh] overflow-y-auto rounded-3xl bg-[#FAF7EE] dark:bg-[#0B121B] border-2 border-[#C59758] p-6 sm:p-8 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)] relative text-[#221A14] dark:text-[#F5F3EF] z-[10000] isolate"
+            className="w-full max-w-2xl max-h-[85vh] overflow-y-auto rounded-3xl bg-[#FAF7EE] dark:bg-[#0B121B] border-2 border-[#C59758] p-6 sm:p-8 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)] relative text-[#221A14] dark:text-[#F5F3EF] z-10000 isolate"
           >
             {/* Close Button */}
             <button
