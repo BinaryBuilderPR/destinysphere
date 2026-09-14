@@ -1,35 +1,14 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import Image from "next/image";
-import { useTheme } from "next-themes";
 
 export default function HeroArtwork() {
-  const [mounted, setMounted] = useState(false);
-  const { resolvedTheme } = useTheme();
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) {
-    return (
-      <div className="relative mx-auto flex w-full max-w-[480px] lg:max-w-[530px] aspect-square items-center justify-center select-none" />
-    );
-  }
-
-  const isDark = resolvedTheme === "dark";
-
   return (
-    <div className="relative mx-auto flex w-full max-w-[480px] lg:max-w-[530px] items-center justify-center select-none">
+    <div className="relative mx-auto flex w-full max-w-[340px] sm:max-w-[460px] lg:max-w-[530px] items-center justify-center select-none">
       {/* Ambient Celestial Glow */}
-      <div
-        className={`absolute -inset-4 rounded-full blur-3xl pointer-events-none transition-colors duration-500 ${
-          isDark ? "bg-[#D5AE63]/15" : "bg-[var(--accent-gold)]/10"
-        }`}
-      />
+      <div className="absolute -inset-4 rounded-full blur-3xl pointer-events-none bg-[var(--accent-gold)]/15 dark:bg-[#D5AE63]/15 transition-colors duration-500" />
 
-      {/* Generated Artwork Container */}
+      {/* Generated Artwork Container with feathered radial mask */}
       <div
         className="relative w-full transition-all duration-300"
         style={{
@@ -37,29 +16,33 @@ export default function HeroArtwork() {
           WebkitMaskImage: "radial-gradient(circle at center, black 65%, rgba(0,0,0,0.9) 78%, transparent 100%)",
         }}
       >
-        {isDark ? (
+        {/* Light Mode Hero Illustration */}
+        <div className="block dark:hidden">
           <Image
-            key="dark-hero"
-            src="/hero-generated-dark.jpg"
-            alt="DestinySphere Celestial Midnight Tarot Guidance"
-            width={530}
-            height={530}
-            priority
-            style={{ width: "100%", height: "auto" }}
-            className="object-contain pointer-events-none"
-          />
-        ) : (
-          <Image
-            key="light-hero"
             src="/hero-generated-light.jpg"
             alt="DestinySphere Celestial Tarot Guidance"
             width={530}
             height={530}
             priority
+            sizes="(max-width: 640px) 340px, (max-width: 1024px) 460px, 530px"
             style={{ width: "100%", height: "auto" }}
             className="object-contain mix-blend-multiply pointer-events-none"
           />
-        )}
+        </div>
+
+        {/* Dark Mode Hero Illustration */}
+        <div className="hidden dark:block">
+          <Image
+            src="/hero-generated-dark.jpg"
+            alt="DestinySphere Celestial Midnight Tarot Guidance"
+            width={530}
+            height={530}
+            priority
+            sizes="(max-width: 640px) 340px, (max-width: 1024px) 460px, 530px"
+            style={{ width: "100%", height: "auto" }}
+            className="object-contain pointer-events-none"
+          />
+        </div>
       </div>
     </div>
   );
