@@ -5,6 +5,7 @@ import "./global.css";
 import { ThemeProvider } from "@/providers/ThemeProvider";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import ScrollButton from "@/components/ui/ScrollButton";
 
 const cormorant = Cormorant_Garamond({
   variable: "--font-heading",
@@ -45,6 +46,7 @@ export default function RootLayout({
             {children}
           </div>
           <Footer />
+          <ScrollButton />
         </ThemeProvider>
       </body>
     </html>
