@@ -20,7 +20,7 @@ export default function Logo() {
       href="/"
       className="group flex items-center gap-3 select-none transition-opacity hover:opacity-95"
     >
-      {/* 12 Zodiac Celestial Emblem - Strictly Clipped to Perfect Circle (No Square Background) */}
+      {/* 12 Zodiac Celestial Emblem Icon */}
       <div
         className="relative flex h-11 w-11 sm:h-13 sm:w-13 shrink-0 items-center justify-center rounded-full overflow-hidden transition-transform duration-300 group-hover:scale-105"
         style={{
@@ -37,12 +37,12 @@ export default function Logo() {
         />
       </div>
 
-      {/* Brand Typography */}
+      {/* Brand Typography - Bold & High Contrast */}
       <div className="leading-tight">
-        <h1 className="font-serif text-lg sm:text-xl font-medium tracking-wide text-foreground">
+        <h1 className="font-serif text-xl sm:text-2xl font-bold tracking-normal text-foreground">
           DestinySphere
         </h1>
-        <p className="text-[11px] sm:text-xs tracking-wider text-muted-foreground font-sans">
+        <p className="text-xs tracking-wider text-muted-foreground font-medium font-sans">
           Discover. Understand. Transform.
         </p>
       </div>

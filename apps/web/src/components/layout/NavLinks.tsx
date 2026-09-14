@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { ChevronDown } from "lucide-react";
 
 import { navigation } from "@/constants/navigation";
 import { cn } from "@/lib/utils";
@@ -27,6 +28,7 @@ export default function NavLinks({
     >
       {navigation.map((item) => {
         const active = pathname === item.href || (item.href !== "/" && pathname.startsWith(item.href));
+        const hasSubmenu = item.label === "Services";
 
         return (
           <Link
@@ -34,14 +36,17 @@ export default function NavLinks({
             href={item.href}
             onClick={onItemClick}
             className={cn(
-              "text-sm font-medium tracking-wide transition-colors duration-200",
+              "inline-flex items-center gap-1 text-sm font-semibold tracking-wide transition-colors duration-200",
               mobile && "py-1 text-base",
               active
-                ? "font-semibold text-[var(--accent-brand)] dark:text-[var(--accent-gold)]"
-                : "text-muted-foreground hover:text-foreground"
+                ? "font-bold text-[#B9684D] dark:text-[#D5AE63]"
+                : "text-foreground/80 hover:text-foreground"
             )}
           >
-            {item.label}
+            <span>{item.label}</span>
+            {hasSubmenu && (
+              <ChevronDown className="h-3.5 w-3.5 opacity-70 transition-transform group-hover:rotate-180" />
+            )}
           </Link>
         );
       })}
