@@ -9,7 +9,7 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-[var(--border)] bg-background/85 backdrop-blur-md transition-colors duration-200">
       <Container>
-        <div className="flex h-20 items-center justify-between gap-4">
+        <div className="flex h-15 items-center justify-between gap-4">
           <Logo />
 
           <NavLinks />
@@ -18,9 +18,9 @@ export default function Navbar() {
             {/* Pill Capsule Theme Toggle */}
             <ThemeToggle />
 
-            {/* Login Button matching exact reference screenshot */}
+            {/* Login Button - Exact matching height (h-9), pill curvature, and styling */}
             <Link href="/login" className="hidden sm:block">
-              <button className="rounded-full px-5 py-2 text-sm font-medium transition-all duration-200 shadow-2xs bg-[#B9684D] hover:bg-[#A8583E] text-white dark:bg-transparent dark:border dark:border-[#D5AE63] dark:text-[#D5AE63] dark:hover:bg-[#D5AE63]/10 cursor-pointer">
+              <button className="h-9 px-6 rounded-full inline-flex items-center justify-center text-sm font-medium transition-all duration-200 shadow-2xs bg-[#B9684D] hover:bg-[#A8583E] text-white border border-transparent dark:bg-transparent dark:border-[#D5AE63] dark:text-[#D5AE63] dark:hover:bg-[#D5AE63]/10 cursor-pointer">
                 Login
               </button>
             </Link>
