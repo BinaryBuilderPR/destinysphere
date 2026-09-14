@@ -50,6 +50,52 @@
 
 html {
   scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(197, 151, 88, 0.5) transparent;
+}
+
+.dark html {
+  scrollbar-color: rgba(213, 174, 99, 0.55) transparent;
+}
+
+/* ================= LUXURY 24K GOLD SCROLLBAR ================= */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(197, 151, 88, 0.4);
+  border-radius: 9999px;
+  border: 1.5px solid transparent;
+  background-clip: content-box;
+  transition: all 0.25s ease-in-out;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #C59758;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(213, 174, 99, 0.45);
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #D5AE63;
+}
+
+::-webkit-scrollbar-button {
+  display: none !important;
+  width: 0;
+  height: 0;
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
 }
 
 body {
