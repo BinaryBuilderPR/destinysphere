@@ -148,21 +148,21 @@ const readings: ReadingItem[] = [
 
 export default function ReadingsSection() {
   return (
-    <section id="readings" className="py-16 md:py-24 transition-colors duration-200">
+    <section id="readings" className="pt-6 pb-16 md:pt-10 md:pb-24 transition-colors duration-200">
       <Container>
-        {/* Section Header */}
-        <div className="flex flex-col items-center text-center mb-12 md:mb-16">
-          <span className="text-[12px] font-semibold tracking-[0.18em] uppercase text-[var(--accent-gold)] mb-2">
+        {/* Section Header Matching Desired Reference */}
+        <div className="flex flex-col items-center text-center mb-10 md:mb-14">
+          <span className="text-sm font-semibold tracking-normal text-[#B9684D] dark:text-[#D5AE63] mb-1.5">
             Our Readings
           </span>
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-foreground">
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-[42px] font-bold text-foreground tracking-tight">
             Discover Your Path
           </h2>
-          {/* Subtle celestial divider */}
-          <div className="flex items-center gap-3 mt-4 text-[var(--accent-gold)]">
-            <span className="h-px w-8 bg-[var(--border)]" />
+          {/* Subtle celestial divider with golden star */}
+          <div className="flex items-center justify-center gap-3 mt-3 text-[#C59758] dark:text-[#D5AE63]">
+            <span className="h-px w-12 bg-[#E5DFC9] dark:bg-[#D5AE63]/30" />
             <span className="text-xs">✦</span>
-            <span className="h-px w-8 bg-[var(--border)]" />
+            <span className="h-px w-12 bg-[#E5DFC9] dark:bg-[#D5AE63]/30" />
           </div>
         </div>
 
@@ -183,7 +183,7 @@ export default function ReadingsSection() {
                   </div>
 
                   {/* Title */}
-                  <h3 className="font-serif text-lg font-medium leading-snug text-foreground mb-2">
+                  <h3 className="font-serif text-lg font-semibold leading-snug text-foreground mb-2">
                     {item.title}
                   </h3>
 
@@ -194,7 +194,7 @@ export default function ReadingsSection() {
                 </div>
 
                 {/* Footer Link */}
-                <div className="mt-5 pt-3 border-t border-[var(--border)]/60 flex items-center gap-1.5 text-xs font-semibold text-[var(--accent-brand)] dark:text-[var(--accent-gold)] transition-colors group-hover:gap-2">
+                <div className="mt-5 pt-3 border-t border-[var(--border)]/60 flex items-center gap-1.5 text-xs font-semibold text-[#B9684D] dark:text-[#D5AE63] transition-colors group-hover:gap-2">
                   <span>Get Reading</span>
                   <ArrowRight className="h-3 w-3 transition-transform" />
                 </div>
@@ -206,4 +206,3 @@ export default function ReadingsSection() {
     </section>
   );
 }
-
