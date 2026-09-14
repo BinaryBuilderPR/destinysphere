@@ -181,7 +181,7 @@ const readings: ReadingItem[] = [
 
 export default function ReadingsSection() {
   return (
-    <section id="readings" className="pt-6 pb-16 md:pt-10 md:pb-24 transition-colors duration-200">
+    <section id="readings" className="bg-white dark:bg-[#020912] pt-12 pb-16 md:pt-16 md:pb-24 transition-colors duration-200">
       <Container>
         {/* Section Header Matching Desired Reference */}
         <div className="flex flex-col items-center text-center mb-10 md:mb-14">
@@ -214,7 +214,7 @@ export default function ReadingsSection() {
                 opacity="0.6"
               />
               {/* Center radiant diamond point */}
-              <circle cx="80" cy="10" r="1" fill="var(--background)" />
+              <circle cx="80" cy="10" r="1" className="fill-white dark:fill-[#020912]" />
 
               {/* Right Line with notch */}
               <line x1="110" y1="7" x2="110" y2="13" stroke="currentColor" strokeWidth="1" strokeOpacity="0.85" />
@@ -231,7 +231,7 @@ export default function ReadingsSection() {
               <Link
                 key={item.id}
                 href={item.href}
-                className="group relative flex flex-col justify-between items-center text-center rounded-2xl border border-[var(--border)] dark:border-[#D5AE63]/20 bg-[var(--card)] p-5 transition-all duration-300 hover:-translate-y-1.5 hover:border-[var(--accent-gold)]/70 hover:shadow-md"
+                className="group relative flex flex-col justify-between items-center text-center rounded-2xl border border-[#EBE6DA] dark:border-[#D5AE63]/20 bg-white dark:bg-[#0B121B] p-5 transition-all duration-300 hover:-translate-y-1.5 hover:border-[var(--accent-gold)]/70 hover:shadow-md"
               >
                 <div className="flex flex-col items-center w-full">
                   {/* Large Prominent Celestial Icon */}

@@ -17,7 +17,7 @@ export default function ArticlesSection() {
       : articles.filter((a) => a.category.toLowerCase() === selectedCategory.toLowerCase());
 
   return (
-    <section className="py-16 md:py-24 border-t border-[var(--border)] transition-colors duration-200">
+    <section className="bg-white dark:bg-[#020912] py-16 md:py-24 border-t border-[var(--border)] transition-colors duration-200">
       <Container>
         {/* Section Header */}
         <div className="flex flex-col items-start mb-8 md:mb-10">
@@ -41,7 +41,7 @@ export default function ArticlesSection() {
                   "rounded-lg px-4 py-1.5 text-xs sm:text-sm font-medium transition-all duration-200 select-none cursor-pointer",
                   isSelected
                     ? "bg-[#B9684D] dark:bg-[#D5AE63] text-white dark:text-[#020912] font-semibold shadow-xs"
-                    : "border border-[var(--border)] dark:border-[#2A3441] bg-[var(--card)] text-muted-foreground hover:text-foreground hover:border-[var(--accent-gold)]/50"
+                    : "border border-[#EBE6DA] dark:border-[#2A3441] bg-white dark:bg-[#0B121B] text-muted-foreground hover:text-foreground hover:border-[var(--accent-gold)]/50"
                 )}
               >
                 {cat}
@@ -56,7 +56,7 @@ export default function ArticlesSection() {
             <Link
               key={article.id}
               href={`/articles/${article.slug}`}
-              className="group flex flex-col overflow-hidden rounded-2xl border border-[var(--border)] dark:border-[#1E293B] bg-[var(--card)] transition-all duration-300 hover:-translate-y-1.5 hover:border-[var(--accent-gold)]/60 hover:shadow-lg"
+              className="group flex flex-col overflow-hidden rounded-2xl border border-[#EBE6DA] dark:border-[#1E293B] bg-white dark:bg-[#0B121B] transition-all duration-300 hover:-translate-y-1.5 hover:border-[var(--accent-gold)]/60 hover:shadow-lg"
             >
               {/* Card Image */}
               <div className="relative h-44 w-full overflow-hidden bg-black/40">
@@ -102,7 +102,7 @@ export default function ArticlesSection() {
         {/* View All Articles CTA */}
         <div className="mt-12 flex justify-center">
           <Link href="/articles">
-            <Button className="rounded-full bg-[#B9684D] hover:opacity-90 dark:bg-[#D5AE63] dark:hover:opacity-90 dark:text-[#020912] text-white px-8 py-3 text-sm font-semibold shadow-xs transition-all duration-200 cursor-pointer">
+            <Button className="rounded-full bg-[#B9684D] hover:opacity-90 dark:bg-[#D5AE63] dark:hover:opacity-90 dark:text-[#020912] text-white px-8 py-5 text-sm font-semibold shadow-xs transition-all duration-200 cursor-pointer">
               View All Articles ({articles.length})
             </Button>
           </Link>
