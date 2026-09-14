@@ -146,7 +146,8 @@ class SoundEngine {
    * Toggle mute
    */
   public toggleMute(): boolean {
-    return this.setMuted(!this.isMuted), this.isMuted;
+    this.setMuted(!this.isMuted);
+    return this.isMuted;
   }
 
   public getMuted(): boolean {

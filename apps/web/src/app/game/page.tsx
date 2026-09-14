@@ -20,6 +20,24 @@ export default function TarotGamePage() {
   const [soundStarted, setSoundStarted] = useState<boolean>(false);
   const chatSectionRef = useRef<HTMLDivElement>(null);
 
+  // Stop sound when navigating to another page or when tab/screen is switched off
+  useEffect(() => {
+    const handleVisibilityChange = () => {
+      if (document.hidden) {
+        audioEngine.stopAmbientTone();
+      } else if (soundStarted && !isMuted) {
+        audioEngine.startAmbientTone();
+      }
+    };
+
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+
+    return () => {
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
+      audioEngine.stopAmbientTone();
+    };
+  }, [soundStarted, isMuted]);
+
   // Start sound on first user interaction
   const initAudio = () => {
     if (!soundStarted) {
@@ -139,8 +157,8 @@ export default function TarotGamePage() {
                   <button
                     onClick={() => setDeckMode("78-full")}
                     className={`px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-bold transition-all cursor-pointer flex items-center gap-1.5 ${deckMode === "78-full"
-                        ? "bg-[#C59758] text-white shadow-lg scale-102"
-                        : "text-[#6A655C] dark:text-[#AAA7A1] hover:text-[#221A14] dark:hover:text-[#F5F3EF]"
+                      ? "bg-[#C59758] text-white shadow-lg scale-102"
+                      : "text-[#6A655C] dark:text-[#AAA7A1] hover:text-[#221A14] dark:hover:text-[#F5F3EF]"
                       }`}
                   >
                     <span>🌟</span>
@@ -149,8 +167,8 @@ export default function TarotGamePage() {
                   <button
                     onClick={() => setDeckMode("22-major")}
                     className={`px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-bold transition-all cursor-pointer flex items-center gap-1.5 ${deckMode === "22-major"
-                        ? "bg-[#C59758] text-white shadow-lg scale-102"
-                        : "text-[#6A655C] dark:text-[#AAA7A1] hover:text-[#221A14] dark:hover:text-[#F5F3EF]"
+                      ? "bg-[#C59758] text-white shadow-lg scale-102"
+                      : "text-[#6A655C] dark:text-[#AAA7A1] hover:text-[#221A14] dark:hover:text-[#F5F3EF]"
                       }`}
                   >
                     <span>🔮</span>

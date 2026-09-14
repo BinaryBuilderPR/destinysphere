@@ -82,18 +82,8 @@ export function DeckFan({
         </div>
       </div>
 
-      {/* Fanned Arc Container - Auto-plays when mouse enters, automatically mutes when mouse leaves */}
-      <div
-        onMouseEnter={() => {
-          audioEngine.startAmbientTone();
-          audioEngine.setMuted(false);
-        }}
-        onMouseLeave={() => {
-          setHoveredIdx(null);
-          audioEngine.setMuted(true);
-        }}
-        className="relative w-full h-[220px] sm:h-[270px] md:h-[310px] flex items-center justify-center overflow-visible"
-      >
+      {/* Fanned Arc Container */}
+      <div className="relative w-full h-[220px] sm:h-[270px] md:h-[310px] flex items-center justify-center overflow-visible">
         {shuffledDeck.map((card, idx) => {
           const total = shuffledDeck.length;
           const mid = (total - 1) / 2;
@@ -108,11 +98,13 @@ export function DeckFan({
               onMouseEnter={() => handleMouseEnter(idx)}
               onMouseLeave={() => setHoveredIdx(null)}
               onClick={() => handleCardClick(card, idx)}
-              className={`absolute top-0 transition-all duration-300 cursor-pointer ${disabled ? "pointer-events-none opacity-50" : ""
-                }`}
+              className={`absolute top-0 transition-all duration-300 cursor-pointer ${
+                disabled ? "pointer-events-none opacity-50" : ""
+              }`}
               style={{
-                transform: `translateX(${offset * 24}px) translateY(${isHovered ? translateY - 40 : translateY
-                  }px) rotate(${isHovered ? 0 : rotDeg}deg) scale(${isHovered ? 1.15 : 1})`,
+                transform: `translateX(${offset * 24}px) translateY(${
+                  isHovered ? translateY - 40 : translateY
+                }px) rotate(${isHovered ? 0 : rotDeg}deg) scale(${isHovered ? 1.15 : 1})`,
                 zIndex: isHovered ? 50 : idx + 10,
               }}
             >
@@ -137,8 +129,9 @@ export function DeckFan({
           <div
             className="absolute -bottom-8 sm:-bottom-10 pointer-events-none transition-all duration-700 ease-out z-[60] flex flex-col items-center"
             style={{
-              transform: `translateX(${(targetHandIdx - (shuffledDeck.length - 1) / 2) * 24}px) translateY(${hoveredIdx !== null ? "-28px" : "0px"
-                })`,
+              transform: `translateX(${(targetHandIdx - (shuffledDeck.length - 1) / 2) * 24}px) translateY(${
+                hoveredIdx !== null ? "-28px" : "0px"
+              })`,
             }}
           >
             {/* Pulsing Golden Beam */}
