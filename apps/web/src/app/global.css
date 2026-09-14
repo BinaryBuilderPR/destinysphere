@@ -50,52 +50,82 @@
 
 html {
   scroll-behavior: smooth;
-  scrollbar-width: thin;
-  scrollbar-color: rgba(197, 151, 88, 0.5) transparent;
 }
 
-.dark html {
-  scrollbar-color: rgba(213, 174, 99, 0.55) transparent;
+/* ================= LUXURY 24K GOLD SCROLLBAR SYSTEM ================= */
+/* WebKit / Chromium (Chrome, Edge, Safari, Opera, Brave) */
+::-webkit-scrollbar,
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+*::-webkit-scrollbar {
+  width: 7px !important;
+  height: 7px !important;
 }
 
-/* ================= LUXURY 24K GOLD SCROLLBAR ================= */
-::-webkit-scrollbar {
-  width: 7px;
-  height: 7px;
+::-webkit-scrollbar-track,
+html::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track,
+*::-webkit-scrollbar-track {
+  background: transparent !important;
 }
 
-::-webkit-scrollbar-track {
-  background: transparent;
+::-webkit-scrollbar-thumb,
+html::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb,
+*::-webkit-scrollbar-thumb {
+  background: #C59758 !important;
+  border-radius: 9999px !important;
+  border: 1px solid transparent !important;
+  background-clip: padding-box !important;
+  transition: background-color 0.2s ease;
 }
 
-::-webkit-scrollbar-thumb {
-  background: rgba(197, 151, 88, 0.4);
-  border-radius: 9999px;
-  border: 1.5px solid transparent;
-  background-clip: content-box;
-  transition: all 0.25s ease-in-out;
+::-webkit-scrollbar-thumb:hover,
+html::-webkit-scrollbar-thumb:hover,
+body::-webkit-scrollbar-thumb:hover,
+*::-webkit-scrollbar-thumb:hover {
+  background: #A67C40 !important;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: #C59758;
+.dark ::-webkit-scrollbar-thumb,
+.dark html::-webkit-scrollbar-thumb,
+.dark body::-webkit-scrollbar-thumb,
+.dark *::-webkit-scrollbar-thumb {
+  background: #D5AE63 !important;
 }
 
-.dark ::-webkit-scrollbar-thumb {
-  background: rgba(213, 174, 99, 0.45);
+.dark ::-webkit-scrollbar-thumb:hover,
+.dark html::-webkit-scrollbar-thumb:hover,
+.dark body::-webkit-scrollbar-thumb:hover,
+.dark *::-webkit-scrollbar-thumb:hover {
+  background: #F0CF85 !important;
 }
 
-.dark ::-webkit-scrollbar-thumb:hover {
-  background: #D5AE63;
-}
-
-::-webkit-scrollbar-button {
+::-webkit-scrollbar-button,
+html::-webkit-scrollbar-button,
+body::-webkit-scrollbar-button,
+*::-webkit-scrollbar-button {
   display: none !important;
-  width: 0;
-  height: 0;
+  width: 0 !important;
+  height: 0 !important;
 }
 
-::-webkit-scrollbar-corner {
-  background: transparent;
+::-webkit-scrollbar-corner,
+html::-webkit-scrollbar-corner,
+body::-webkit-scrollbar-corner,
+*::-webkit-scrollbar-corner {
+  background: transparent !important;
+}
+
+/* Firefox Fallback */
+@supports not selector(::-webkit-scrollbar) {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #C59758 transparent;
+  }
+  .dark * {
+    scrollbar-color: #D5AE63 transparent;
+  }
 }
 
 body {

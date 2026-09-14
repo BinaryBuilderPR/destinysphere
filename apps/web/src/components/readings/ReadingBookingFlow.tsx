@@ -10,6 +10,7 @@ import {
   ReadingTier,
 } from "@/data/readingServices";
 import { audioEngine } from "@/lib/audioEngine";
+import { SacredSelect } from "@/components/ui/SacredSelect";
 import {
   Shield,
   Lock,

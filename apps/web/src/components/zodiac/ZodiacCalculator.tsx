@@ -10,6 +10,7 @@ import {
   getCalculatedPlanetaryAura,
 } from "@/data/zodiacSigns";
 import { audioEngine } from "@/lib/audioEngine";
+import { SacredSelect } from "@/components/ui/SacredSelect";
 
 const ELEMENT_COLORS: Record<ZodiacSign["element"], { badge: string; border: string; glow: string; text: string }> = {
   Fire: { badge: "bg-red-500/15 text-red-700 dark:text-red-300 border-red-500/30", border: "border-red-500/40", glow: "rgba(239, 68, 68, 0.25)", text: "text-red-600 dark:text-red-400" },
@@ -59,10 +60,12 @@ export function ZodiacCalculator() {
   return (
     <div className="w-full max-w-5xl mx-auto flex flex-col gap-8">
       {/* ================= CALCULATOR INPUT FORM ================= */}
-      <div className="rounded-3xl border-2 border-[#C59758]/40 bg-white/90 dark:bg-[#0B121B]/90 shadow-2xl p-6 sm:p-8 backdrop-blur-md relative overflow-hidden">
+      <div className="rounded-3xl border-2 border-[#C59758]/40 bg-white/90 dark:bg-[#0B121B]/90 shadow-2xl p-6 sm:p-8 backdrop-blur-md relative">
         {/* Mystic Aura Background Glow */}
-        <div className="absolute -top-24 -right-24 w-72 h-72 rounded-full bg-[#C59758]/10 blur-3xl pointer-events-none" />
-        <div className="absolute -bottom-24 -left-24 w-72 h-72 rounded-full bg-[#B9684D]/10 blur-3xl pointer-events-none" />
+        <div className="absolute inset-0 rounded-3xl overflow-hidden pointer-events-none">
+          <div className="absolute -top-24 -right-24 w-72 h-72 rounded-full bg-[#C59758]/10 blur-3xl" />
+          <div className="absolute -bottom-24 -left-24 w-72 h-72 rounded-full bg-[#B9684D]/10 blur-3xl" />
+        </div>
 
         <div className="relative z-10">
           <div className="text-center max-w-2xl mx-auto mb-6">
@@ -85,17 +88,14 @@ export function ZodiacCalculator() {
                 <label className="block text-xs font-bold uppercase tracking-wider text-[#6A655C] dark:text-[#AAA7A1] mb-1.5">
                   Birth Month
                 </label>
-                <select
+                <SacredSelect
                   value={birthMonth}
-                  onChange={(e) => setBirthMonth(Number(e.target.value))}
-                  className="sacred-select w-full px-4 py-3.5 rounded-2xl bg-[#FAF7EE] dark:bg-[#121B26] border-2 border-[#C59758]/30 dark:border-[#D5AE63]/30 text-[#221A14] dark:text-[#F5F3EF] text-sm font-semibold focus:outline-none focus:border-[#C59758] dark:focus:border-[#D5AE63] focus:ring-2 focus:ring-[#C59758]/20 transition-all cursor-pointer shadow-xs"
-                >
-                  {MONTHS.map((m, idx) => (
-                    <option key={m} value={idx + 1}>
-                      {idx + 1} • {m}
-                    </option>
-                  ))}
-                </select>
+                  onChange={(val) => setBirthMonth(Number(val))}
+                  options={MONTHS.map((m, idx) => ({
+                    value: idx + 1,
+                    label: `${idx + 1} • ${m}`,
+                  }))}
+                />
               </div>
 
               {/* Day */}
@@ -103,17 +103,14 @@ export function ZodiacCalculator() {
                 <label className="block text-xs font-bold uppercase tracking-wider text-[#6A655C] dark:text-[#AAA7A1] mb-1.5">
                   Birth Day
                 </label>
-                <select
+                <SacredSelect
                   value={birthDay}
-                  onChange={(e) => setBirthDay(Number(e.target.value))}
-                  className="sacred-select w-full px-4 py-3.5 rounded-2xl bg-[#FAF7EE] dark:bg-[#121B26] border-2 border-[#C59758]/30 dark:border-[#D5AE63]/30 text-[#221A14] dark:text-[#F5F3EF] text-sm font-semibold focus:outline-none focus:border-[#C59758] dark:focus:border-[#D5AE63] focus:ring-2 focus:ring-[#C59758]/20 transition-all cursor-pointer shadow-xs"
-                >
-                  {Array.from({ length: 31 }, (_, i) => i + 1).map((d) => (
-                    <option key={d} value={d}>
-                      {d}
-                    </option>
-                  ))}
-                </select>
+                  onChange={(val) => setBirthDay(Number(val))}
+                  options={Array.from({ length: 31 }, (_, i) => ({
+                    value: i + 1,
+                    label: `Day ${i + 1}`,
+                  }))}
+                />
               </div>
 
               {/* Year */}
@@ -121,17 +118,14 @@ export function ZodiacCalculator() {
                 <label className="block text-xs font-bold uppercase tracking-wider text-[#6A655C] dark:text-[#AAA7A1] mb-1.5">
                   Birth Year
                 </label>
-                <select
+                <SacredSelect
                   value={birthYear}
-                  onChange={(e) => setBirthYear(Number(e.target.value))}
-                  className="sacred-select w-full px-4 py-3.5 rounded-2xl bg-[#FAF7EE] dark:bg-[#121B26] border-2 border-[#C59758]/30 dark:border-[#D5AE63]/30 text-[#221A14] dark:text-[#F5F3EF] text-sm font-semibold focus:outline-none focus:border-[#C59758] dark:focus:border-[#D5AE63] focus:ring-2 focus:ring-[#C59758]/20 transition-all cursor-pointer shadow-xs"
-                >
-                  {Array.from({ length: 100 }, (_, i) => 2026 - i).map((y) => (
-                    <option key={y} value={y}>
-                      {y}
-                    </option>
-                  ))}
-                </select>
+                  onChange={(val) => setBirthYear(Number(val))}
+                  options={Array.from({ length: 100 }, (_, i) => ({
+                    value: 2026 - i,
+                    label: String(2026 - i),
+                  }))}
+                />
               </div>
             </div>
 
@@ -150,26 +144,27 @@ export function ZodiacCalculator() {
               </label>
 
               {knowsTime && (
-                <div className="flex items-center gap-2 animate-fade-in">
-                  <select
+                <div className="flex items-center gap-2 animate-fade-in w-full sm:w-auto">
+                  <SacredSelect
+                    size="sm"
                     value={birthHour}
-                    onChange={(e) => setBirthHour(Number(e.target.value))}
-                    className="sacred-select px-3.5 py-2 rounded-xl bg-[#FAF7EE] dark:bg-[#121B26] border border-[#C59758]/40 text-xs font-semibold text-[#221A14] dark:text-[#F5F3EF]"
-                  >
-                    {Array.from({ length: 12 }, (_, i) => i + 1).map((h) => (
-                      <option key={h} value={h}>
-                        {h}:00
-                      </option>
-                    ))}
-                  </select>
-                  <select
+                    onChange={(val) => setBirthHour(Number(val))}
+                    options={Array.from({ length: 12 }, (_, i) => ({
+                      value: i + 1,
+                      label: `${i + 1}:00`,
+                    }))}
+                    className="w-28"
+                  />
+                  <SacredSelect
+                    size="sm"
                     value={birthPeriod}
-                    onChange={(e) => setBirthPeriod(e.target.value as "AM" | "PM")}
-                    className="sacred-select px-3.5 py-2 rounded-xl bg-[#FAF7EE] dark:bg-[#121B26] border border-[#C59758]/40 text-xs font-semibold text-[#221A14] dark:text-[#F5F3EF]"
-                  >
-                    <option value="AM">AM</option>
-                    <option value="PM">PM</option>
-                  </select>
+                    onChange={(val) => setBirthPeriod(val as "AM" | "PM")}
+                    options={[
+                      { value: "AM", label: "AM" },
+                      { value: "PM", label: "PM" },
+                    ]}
+                    className="w-24"
+                  />
                 </div>
               )}
             </div>
@@ -216,7 +211,7 @@ export function ZodiacCalculator() {
             </div>
 
             {/* Pillar 2: Moon Sign */}
-            <div className="rounded-2xl p-4 sm:p-5 bg-white/95 dark:bg-[#0B121B]/95 border border-[#C59758]/40 shadow-md flex flex-col items-center text-center relative overflow-hidden">
+            <div className="rounded-2xl p-4 sm:p-5 bg-white/95 dark:bg-[#0B121B]/95 border-2 border-[#C59758]/50 shadow-md flex flex-col items-center text-center relative overflow-hidden">
               <span className="text-[10px] uppercase tracking-wider font-bold text-[#6A655C] dark:text-[#AAA7A1] mb-1">
                 🌙 Moon Sign (Inner Soul)
               </span>
@@ -237,7 +232,7 @@ export function ZodiacCalculator() {
             </div>
 
             {/* Pillar 3: Rising / Ascendant */}
-            <div className="rounded-2xl p-4 sm:p-5 bg-white/95 dark:bg-[#0B121B]/95 border border-[#C59758]/40 shadow-md flex flex-col items-center text-center relative overflow-hidden">
+            <div className="rounded-2xl p-4 sm:p-5 bg-white/95 dark:bg-[#0B121B]/95 border-2 border-[#C59758]/50 shadow-md flex flex-col items-center text-center relative overflow-hidden">
               <span className="text-[10px] uppercase tracking-wider font-bold text-[#6A655C] dark:text-[#AAA7A1] mb-1">
                 🌅 Rising Sign (Outer Mask)
               </span>
@@ -258,7 +253,7 @@ export function ZodiacCalculator() {
             </div>
 
             {/* Pillar 4: Chinese Zodiac */}
-            <div className="rounded-2xl p-4 sm:p-5 bg-white/95 dark:bg-[#0B121B]/95 border border-[#C59758]/40 shadow-md flex flex-col items-center text-center relative overflow-hidden">
+            <div className="rounded-2xl p-4 sm:p-5 bg-white/95 dark:bg-[#0B121B]/95 border-2 border-[#C59758]/50 shadow-md flex flex-col items-center text-center relative overflow-hidden">
               <span className="text-[10px] uppercase tracking-wider font-bold text-[#6A655C] dark:text-[#AAA7A1] mb-1">
                 🐉 Chinese Zodiac
               </span>
