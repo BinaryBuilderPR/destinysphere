@@ -25,7 +25,7 @@ const trustIndicators = [
 
 export default function HeroSection() {
   return (
-    <section className="relative overflow-hidden pt-8 pb-14 md:pt-14 md:pb-20">
+    <section className="relative overflow-hidden pt-8 pb-12 md:pt-14 md:pb-16">
       <Container>
         {/* Main Hero Split */}
         <div className="grid grid-cols-1 lg:grid-cols-12 items-center gap-10 lg:gap-8">
@@ -73,18 +73,20 @@ export default function HeroSection() {
           </div>
         </div>
 
-        {/* Trust Indicators Bar */}
-        <div className="mt-14 pt-8 border-t border-[var(--border)]">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 items-center justify-between">
-            {trustIndicators.map((item) => {
+        {/* Unified Trust Indicators Pill Bar (Matching Reference Mockup) */}
+        <div className="mt-12 flex justify-start">
+          <div className="inline-flex flex-wrap sm:flex-nowrap items-center gap-4 sm:gap-6 rounded-full border border-[var(--border)] dark:border-[#D5AE63]/35 bg-[var(--card)]/80 backdrop-blur-xs px-6 py-2.5 shadow-2xs">
+            {trustIndicators.map((item, index) => {
               const Icon = item.icon;
               return (
-                <div
-                  key={item.label}
-                  className="inline-flex items-center justify-center gap-2 rounded-full border border-[var(--border)] dark:border-[#D5AE63]/25 bg-[var(--card)]/40 px-4 py-2 text-xs sm:text-sm font-medium text-muted-foreground shadow-2xs backdrop-blur-2xs transition-colors hover:border-[var(--accent-gold)]/60"
-                >
-                  <Icon className="h-4 w-4 text-[var(--accent-gold)] shrink-0" />
-                  <span className="tracking-wide text-foreground/90">{item.label}</span>
+                <div key={item.label} className="flex items-center gap-4 sm:gap-6">
+                  <div className="flex items-center gap-2 text-xs sm:text-sm font-medium text-foreground/85">
+                    <Icon className="h-4 w-4 text-[var(--accent-gold)] shrink-0" />
+                    <span className="tracking-normal whitespace-nowrap">{item.label}</span>
+                  </div>
+                  {index < trustIndicators.length - 1 && (
+                    <span className="hidden sm:inline-block h-3.5 w-px bg-[var(--border)] dark:bg-[#D5AE63]/25" />
+                  )}
                 </div>
               );
             })}
