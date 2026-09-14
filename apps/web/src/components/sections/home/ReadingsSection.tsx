@@ -10,87 +10,120 @@ interface ReadingItem {
   icon: (props: { className?: string }) => React.ReactNode;
 }
 
-// Celestial Custom Line-Art Icons for each service
+// Highly Detailed Large Celestial Icons for 7 Reading Cards
 const TarotIcon = ({ className }: { className?: string }) => (
-  <svg viewBox="0 0 48 48" fill="none" className={className} stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-    <rect x="14" y="8" width="20" height="32" rx="3" />
-    <circle cx="24" cy="24" r="6" />
-    <path d="M 24 14 L 24 16 M 24 32 L 24 34 M 14 24 L 16 24 M 32 24 L 34 24" />
-    <path d="M 18 12 L 30 12 M 18 36 L 30 36" strokeWidth="1" strokeDasharray="1 2" />
-    <path d="M 8 14 L 14 10 M 40 14 L 34 10" opacity="0.6" />
+  <svg viewBox="0 0 64 64" fill="none" className={className} stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
+    {/* Background Tilted Card */}
+    <rect x="14" y="10" width="28" height="44" rx="3" transform="rotate(-6 14 10)" opacity="0.6" strokeDasharray="3 2" />
+    {/* Foreground Card */}
+    <rect x="22" y="10" width="28" height="44" rx="3" />
+    <rect x="25" y="13" width="22" height="38" rx="2" strokeWidth="0.8" opacity="0.7" />
+    {/* Sun Motif */}
+    <circle cx="36" cy="28" r="6" />
+    <circle cx="36" cy="28" r="3" fill="currentColor" fillOpacity="0.2" />
+    <path d="M 36 17 L 36 19 M 36 37 L 36 39 M 25 28 L 27 28 M 45 28 L 47 28" />
+    <path d="M 28 20 L 30 22 M 42 34 L 44 36 M 28 36 L 30 34 M 42 20 L 44 22" strokeWidth="0.9" />
+    {/* Card Bottom Label */}
+    <line x1="28" y1="46" x2="44" y2="46" strokeWidth="1" />
   </svg>
 );
 
 const MoonologyIcon = ({ className }: { className?: string }) => (
-  <svg viewBox="0 0 48 48" fill="none" className={className} stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-    <circle cx="24" cy="24" r="16" strokeDasharray="3 3" opacity="0.6" />
-    <path d="M 20 12 A 14 14 0 0 0 34 32 A 13 13 0 0 1 20 12 Z" fill="currentColor" fillOpacity="0.12" />
-    <circle cx="16" cy="18" r="1" fill="currentColor" />
-    <circle cx="36" cy="16" r="1.5" fill="currentColor" />
-    <circle cx="14" cy="30" r="1" fill="currentColor" />
+  <svg viewBox="0 0 64 64" fill="none" className={className} stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
+    {/* Outer Constellation Ring */}
+    <circle cx="32" cy="32" r="24" strokeDasharray="3 3" opacity="0.6" />
+    <circle cx="32" cy="32" r="20" strokeWidth="0.8" opacity="0.4" />
+    {/* Crescent Moon */}
+    <path d="M 26 16 A 18 18 0 0 0 44 42 A 16 16 0 0 1 26 16 Z" fill="currentColor" fillOpacity="0.15" strokeWidth="1.6" />
+    {/* Constellation Stars */}
+    <path d="M 22 24 L 22 28 M 20 26 L 24 26" strokeWidth="1" />
+    <path d="M 46 20 L 46 26 M 43 23 L 49 23" strokeWidth="1" />
+    <circle cx="20" cy="38" r="1.5" fill="currentColor" />
+    <circle cx="42" cy="46" r="1.5" fill="currentColor" />
+    <circle cx="16" cy="22" r="1" fill="currentColor" />
   </svg>
 );
 
 const KundaliIcon = ({ className }: { className?: string }) => (
-  <svg viewBox="0 0 48 48" fill="none" className={className} stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-    <rect x="10" y="10" width="28" height="28" />
-    <line x1="10" y1="10" x2="38" y2="38" />
-    <line x1="10" y1="38" x2="38" y2="10" />
-    <polygon points="24,10 38,24 24,38 10,24" />
-    <circle cx="24" cy="24" r="3" fill="currentColor" fillOpacity="0.2" />
+  <svg viewBox="0 0 64 64" fill="none" className={className} stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
+    {/* Vedic Square Chart */}
+    <rect x="12" y="12" width="40" height="40" strokeWidth="1.6" />
+    {/* Diagonals */}
+    <line x1="12" y1="12" x2="52" y2="52" />
+    <line x1="12" y1="52" x2="52" y2="12" />
+    {/* Inner Diamond */}
+    <polygon points="32,12 52,32 32,52 12,32" strokeWidth="1.4" fill="currentColor" fillOpacity="0.08" />
+    {/* Center Sun / Bindu */}
+    <circle cx="32" cy="32" r="4" fill="currentColor" fillOpacity="0.25" />
+    <circle cx="32" cy="32" r="1.5" fill="currentColor" />
   </svg>
 );
 
 const NumerologyIcon = ({ className }: { className?: string }) => (
-  <svg viewBox="0 0 48 48" fill="none" className={className} stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-    <circle cx="24" cy="24" r="15" />
-    <circle cx="24" cy="24" r="6" />
-    <line x1="24" y1="5" x2="24" y2="43" strokeDasharray="2 2" />
-    <line x1="5" y1="24" x2="43" y2="24" strokeDasharray="2 2" />
-    <path d="M 12 12 L 36 36 M 12 36 L 36 12" opacity="0.5" />
-    <circle cx="24" cy="9" r="1.5" fill="currentColor" />
-    <circle cx="39" cy="24" r="1.5" fill="currentColor" />
-    <circle cx="24" cy="39" r="1.5" fill="currentColor" />
-    <circle cx="9" cy="24" r="1.5" fill="currentColor" />
+  <svg viewBox="0 0 64 64" fill="none" className={className} stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
+    {/* Sacred Geometry Dial */}
+    <circle cx="32" cy="32" r="24" strokeWidth="1.6" />
+    <circle cx="32" cy="32" r="17" strokeDasharray="3 2" opacity="0.6" />
+    <circle cx="32" cy="32" r="8" fill="currentColor" fillOpacity="0.12" />
+    {/* Coordinate Axes */}
+    <line x1="32" y1="8" x2="32" y2="56" strokeDasharray="2 2" />
+    <line x1="8" y1="32" x2="56" y2="32" strokeDasharray="2 2" />
+    <line x1="15" y1="15" x2="49" y2="49" opacity="0.5" />
+    <line x1="15" y1="49" x2="49" y2="15" opacity="0.5" />
+    {/* Cardinal Planet Nodes */}
+    <circle cx="32" cy="12" r="2" fill="currentColor" />
+    <circle cx="52" cy="32" r="2" fill="currentColor" />
+    <circle cx="32" cy="52" r="2" fill="currentColor" />
+    <circle cx="12" cy="32" r="2" fill="currentColor" />
   </svg>
 );
 
 const CandleWaxIcon = ({ className }: { className?: string }) => (
-  <svg viewBox="0 0 48 48" fill="none" className={className} stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-    {/* Candle base */}
-    <rect x="18" y="20" width="12" height="20" rx="2" />
-    {/* Wick & Flame */}
-    <line x1="24" y1="20" x2="24" y2="16" />
-    <path d="M 24 6 Q 28 12 24 16 Q 20 12 24 6 Z" fill="currentColor" fillOpacity="0.2" />
-    {/* Radiance spark */}
-    <path d="M 24 2 L 24 4 M 18 8 L 20 9 M 30 8 L 28 9" opacity="0.7" />
-    {/* Drips */}
-    <path d="M 21 20 L 21 26 Q 22 28 23 26 L 23 20" fill="currentColor" fillOpacity="0.15" />
+  <svg viewBox="0 0 64 64" fill="none" className={className} stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
+    {/* Candle Holder Plate */}
+    <path d="M 18 52 C 18 48 46 48 46 52 Z" fill="currentColor" fillOpacity="0.15" />
+    <line x1="14" y1="52" x2="50" y2="52" strokeWidth="1.8" />
+    {/* Pillar Candle */}
+    <rect x="25" y="26" width="14" height="24" rx="2" strokeWidth="1.5" />
+    {/* Wax Drips */}
+    <path d="M 28 26 L 28 34 Q 30 36 31 34 L 31 26" fill="currentColor" fillOpacity="0.2" />
+    {/* Wick & Radiant Flame */}
+    <line x1="32" y1="26" x2="32" y2="21" strokeWidth="1.5" />
+    <path d="M 32 8 Q 38 16 32 21 Q 26 16 32 8 Z" fill="currentColor" fillOpacity="0.3" strokeWidth="1.6" />
+    {/* Aura Sparkles */}
+    <path d="M 32 3 L 32 6 M 23 11 L 26 13 M 41 11 L 38 13" opacity="0.75" />
   </svg>
 );
 
 const KrishnaCardsIcon = ({ className }: { className?: string }) => (
-  <svg viewBox="0 0 48 48" fill="none" className={className} stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-    {/* Feather / Flute motif */}
-    <path d="M 16 38 Q 24 28 32 10 Q 36 14 34 22 Q 32 30 20 38 Z" fill="currentColor" fillOpacity="0.1" />
-    <path d="M 20 38 Q 27 22 32 10" />
-    <circle cx="32" cy="16" r="3" />
-    <circle cx="32" cy="16" r="1" fill="currentColor" />
-    <line x1="12" y1="36" x2="22" y2="40" strokeWidth="1" />
-    {/* Sacred stars */}
-    <circle cx="14" cy="16" r="1.5" fill="currentColor" />
-    <circle cx="38" cy="28" r="1.5" fill="currentColor" />
+  <svg viewBox="0 0 64 64" fill="none" className={className} stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
+    {/* Sacred Peacock Feather */}
+    <path d="M 20 54 Q 32 40 44 14 Q 50 20 46 32 Q 42 44 26 54 Z" fill="currentColor" fillOpacity="0.15" strokeWidth="1.5" />
+    <path d="M 26 54 Q 36 32 44 14" strokeWidth="1.5" />
+    {/* Feather Eye */}
+    <circle cx="43" cy="24" r="5" strokeWidth="1.2" />
+    <circle cx="43" cy="24" r="2.5" fill="currentColor" />
+    {/* Divine Flute Line */}
+    <line x1="14" y1="50" x2="28" y2="56" strokeWidth="2" />
+    {/* Aura Stars */}
+    <circle cx="18" cy="22" r="2" fill="currentColor" />
+    <circle cx="52" cy="38" r="1.8" fill="currentColor" />
+    <circle cx="28" cy="14" r="1.5" fill="currentColor" />
   </svg>
 );
 
 const LuckyNumbersIcon = ({ className }: { className?: string }) => (
-  <svg viewBox="0 0 48 48" fill="none" className={className} stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-    <circle cx="24" cy="24" r="16" strokeDasharray="2 3" />
-    <polygon points="24,12 27,20 36,20 29,25 32,34 24,28 16,34 19,25 12,20 21,20" fill="currentColor" fillOpacity="0.15" />
-    <circle cx="24" cy="6" r="1.5" fill="currentColor" />
-    <circle cx="42" cy="24" r="1.5" fill="currentColor" />
-    <circle cx="24" cy="42" r="1.5" fill="currentColor" />
-    <circle cx="6" cy="24" r="1.5" fill="currentColor" />
+  <svg viewBox="0 0 64 64" fill="none" className={className} stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
+    {/* Outer Constellation Orbit */}
+    <circle cx="32" cy="32" r="23" strokeDasharray="3 3" opacity="0.6" />
+    <circle cx="32" cy="32" r="15" strokeWidth="0.8" opacity="0.5" />
+    {/* Star Matrix */}
+    <polygon points="32,14 36,26 48,26 38,33 42,46 32,38 22,46 26,33 16,26 28,26" fill="currentColor" fillOpacity="0.2" strokeWidth="1.5" />
+    {/* Lucky Number Orbit Nodes */}
+    <circle cx="32" cy="9" r="2.2" fill="currentColor" />
+    <circle cx="55" cy="32" r="2.2" fill="currentColor" />
+    <circle cx="32" cy="55" r="2.2" fill="currentColor" />
+    <circle cx="9" cy="32" r="2.2" fill="currentColor" />
   </svg>
 );
 
@@ -166,7 +199,7 @@ export default function ReadingsSection() {
           </div>
         </div>
 
-        {/* 7-Card Responsive Grid */}
+        {/* 7-Card Responsive Grid with Large Icons and Bold Typography */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-4 lg:gap-3.5">
           {readings.map((item) => {
             const IconComponent = item.icon;
@@ -174,27 +207,27 @@ export default function ReadingsSection() {
               <Link
                 key={item.id}
                 href={item.href}
-                className="group relative flex flex-col justify-between rounded-xl border border-[var(--border)] bg-[var(--card)] p-5 transition-all duration-300 hover:-translate-y-1 hover:border-[var(--accent-gold)]/60 hover:shadow-md"
+                className="group relative flex flex-col justify-between items-center text-center rounded-2xl border border-[var(--border)] dark:border-[#D5AE63]/20 bg-[var(--card)] p-5 transition-all duration-300 hover:-translate-y-1.5 hover:border-[var(--accent-gold)]/70 hover:shadow-md"
               >
-                <div>
-                  {/* Icon Area */}
-                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg text-[var(--accent-gold)] transition-transform duration-300 group-hover:scale-105">
-                    <IconComponent className="h-9 w-9" />
+                <div className="flex flex-col items-center w-full">
+                  {/* Large Prominent Celestial Icon */}
+                  <div className="mb-5 flex h-18 w-18 items-center justify-center text-[var(--accent-gold)] transition-transform duration-300 group-hover:scale-110">
+                    <IconComponent className="h-16 w-16" />
                   </div>
 
-                  {/* Title */}
-                  <h3 className="font-serif text-lg font-semibold leading-snug text-foreground mb-2">
+                  {/* Bold Card Heading */}
+                  <h3 className="font-serif text-lg font-bold leading-snug text-foreground mb-2.5">
                     {item.title}
                   </h3>
 
-                  {/* Description */}
-                  <p className="text-xs leading-relaxed text-muted-foreground font-normal">
+                  {/* Centered Description */}
+                  <p className="text-[11.5px] leading-relaxed text-muted-foreground font-normal">
                     {item.description}
                   </p>
                 </div>
 
-                {/* Footer Link */}
-                <div className="mt-5 pt-3 border-t border-[var(--border)]/60 flex items-center gap-1.5 text-xs font-semibold text-[#B9684D] dark:text-[#D5AE63] transition-colors group-hover:gap-2">
+                {/* Centered CTA Link */}
+                <div className="mt-5 pt-3 border-t border-[var(--border)]/60 w-full flex items-center justify-center gap-1.5 text-xs font-bold text-[#B9684D] dark:text-[#D5AE63] transition-all group-hover:gap-2">
                   <span>Get Reading</span>
                   <ArrowRight className="h-3 w-3 transition-transform" />
                 </div>
