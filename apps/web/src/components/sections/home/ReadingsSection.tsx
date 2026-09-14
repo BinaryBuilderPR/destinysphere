@@ -185,17 +185,41 @@ export default function ReadingsSection() {
       <Container>
         {/* Section Header Matching Desired Reference */}
         <div className="flex flex-col items-center text-center mb-10 md:mb-14">
-          <span className="text-sm font-semibold tracking-normal text-[#B9684D] dark:text-[#D5AE63] mb-1.5">
+          <span className="text-sm font-bold tracking-normal text-[#B9684D] dark:text-[#D5AE63] mb-1.5">
             Our Readings
           </span>
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-[42px] font-bold text-foreground tracking-tight">
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-[44px] font-bold text-foreground tracking-tight">
             Discover Your Path
           </h2>
-          {/* Subtle celestial divider with golden star */}
-          <div className="flex items-center justify-center gap-3 mt-3 text-[#C59758] dark:text-[#D5AE63]">
-            <span className="h-px w-12 bg-[#E5DFC9] dark:bg-[#D5AE63]/30" />
-            <span className="text-xs">✦</span>
-            <span className="h-px w-12 bg-[#E5DFC9] dark:bg-[#D5AE63]/30" />
+          {/* Celestial Divider matching reference */}
+          <div className="flex items-center justify-center mt-3.5 text-[#C59758] dark:text-[#D5AE63]">
+            <svg
+              className="w-36 sm:w-44 h-5"
+              viewBox="0 0 160 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              {/* Left Line with notch */}
+              <line x1="10" y1="10" x2="62" y2="10" stroke="currentColor" strokeWidth="1" strokeOpacity="0.85" />
+              <line x1="50" y1="7" x2="50" y2="13" stroke="currentColor" strokeWidth="1" strokeOpacity="0.85" />
+
+              {/* Center 8-Point Radiant Celestial Star */}
+              <path
+                d="M80 1 L82 8 L89 10 L82 12 L80 19 L78 12 L71 10 L78 8 Z"
+                fill="currentColor"
+              />
+              <path
+                d="M80 4.5 L83.5 8 L85.5 10 L83.5 12 L80 15.5 L76.5 12 L74.5 10 L76.5 8 Z"
+                fill="currentColor"
+                opacity="0.6"
+              />
+              {/* Center radiant diamond point */}
+              <circle cx="80" cy="10" r="1" fill="var(--background)" />
+
+              {/* Right Line with notch */}
+              <line x1="110" y1="7" x2="110" y2="13" stroke="currentColor" strokeWidth="1" strokeOpacity="0.85" />
+              <line x1="98" y1="10" x2="150" y2="10" stroke="currentColor" strokeWidth="1" strokeOpacity="0.85" />
+            </svg>
           </div>
         </div>
 
